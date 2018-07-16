@@ -12,6 +12,7 @@
 		A8F8129220FD23A7001F8D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129020FD23A7001F8D50 /* Main.storyboard */; };
 		A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129320FD23A8001F8D50 /* Assets.xcassets */; };
 		A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129520FD23A8001F8D50 /* LaunchScreen.storyboard */; };
+		A8F8129F20FD2748001F8D50 /* LoginScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129E20FD2748001F8D50 /* LoginScreenViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A8F8129320FD23A8001F8D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8F8129620FD23A8001F8D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8F8129820FD23A8001F8D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8F8129E20FD2748001F8D50 /* LoginScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreenViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				A8F8129320FD23A8001F8D50 /* Assets.xcassets */,
 				A8F8129520FD23A8001F8D50 /* LaunchScreen.storyboard */,
 				A8F8129820FD23A8001F8D50 /* Info.plist */,
+				A8F8129E20FD2748001F8D50 /* LoginScreenViewController.storyboard */,
 			);
 			path = FrRunner;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 				A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
 				A8F8129220FD23A7001F8D50 /* Main.storyboard in Resources */,
+				A8F8129F20FD2748001F8D50 /* LoginScreenViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
