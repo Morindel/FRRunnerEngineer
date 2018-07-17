@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816269220FD34F8006F09FE /* LoginScreenViewController.swift */; };
+		A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A6242920FE7E41008B21FD /* BaseView.storyboard */; };
+		A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242B20FE8034008B21FD /* BaseViewController.swift */; };
+		A8A6242F20FE8618008B21FD /* FrRunner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */; };
 		A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8128C20FD23A7001F8D50 /* AppDelegate.swift */; };
 		A8F8128F20FD23A7001F8D50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8128E20FD23A7001F8D50 /* ViewController.swift */; };
 		A8F8129220FD23A7001F8D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129020FD23A7001F8D50 /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		A816269220FD34F8006F09FE /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		A8A6242920FE7E41008B21FD /* BaseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseView.storyboard; sourceTree = "<group>"; };
+		A8A6242B20FE8034008B21FD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A8A6242E20FE8618008B21FD /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A8F8128920FD23A7001F8D50 /* FrRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F8128C20FD23A7001F8D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F8128E20FD23A7001F8D50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,9 +45,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8A6242820FE7E24008B21FD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A8A6242920FE7E41008B21FD /* BaseView.storyboard */,
+				A8A6242B20FE8034008B21FD /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		A8F8128020FD23A7001F8D50 = {
 			isa = PBXGroup;
 			children = (
+				A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */,
 				A8F8128B20FD23A7001F8D50 /* FrRunner */,
 				A8F8128A20FD23A7001F8D50 /* Products */,
 			);
@@ -88,6 +104,7 @@
 		A8F812A220FD2844001F8D50 /* Functionalities */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6242820FE7E24008B21FD /* Base */,
 				A8F812A320FD2851001F8D50 /* Login */,
 			);
 			path = Functionalities;
@@ -163,6 +180,7 @@
 				A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
 				A8F8129220FD23A7001F8D50 /* Main.storyboard in Resources */,
+				A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */,
 				A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +193,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F8128F20FD23A7001F8D50 /* ViewController.swift in Sources */,
+				A8A6242F20FE8618008B21FD /* FrRunner.xcdatamodeld in Sources */,
+				A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */,
 				A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */,
 				A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */,
 			);
@@ -372,6 +392,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A8A6242E20FE8618008B21FD /* DataModel.xcdatamodel */,
+			);
+			currentVersion = A8A6242E20FE8618008B21FD /* DataModel.xcdatamodel */;
+			path = FrRunner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A8F8128120FD23A7001F8D50 /* Project object */;
 }
