@@ -15,14 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        let mainStoryboard : UIStoryboard = UIStoryboard(name: "LoginScreen", bundle: nil)
-        let initialViewControlleripad : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginScreen")
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = initialViewControlleripad
-        self.window?.makeKeyAndVisible()
-    
+        let locationManager = LocationManager.shared
+        locationManager.requestWhenInUseAuthorization()
+        
+        
         return true
     }
 
