@@ -1,0 +1,6 @@
+framework module Pods_FrRunner {
+  umbrella header "Pods-FrRunner-umbrella.h"
+
+  export *
+  module * { export * }
+}
