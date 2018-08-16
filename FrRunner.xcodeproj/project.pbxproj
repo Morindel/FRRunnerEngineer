@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80A4F612123593F00359EB0 /* RunsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F602123593F00359EB0 /* RunsHistoryViewController.swift */; };
+		A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */; };
+		A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A80A4F662125B50800359EB0 /* GoogleService-Info.plist */; };
+		A80A4F692125C54400359EB0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F682125C54400359EB0 /* SignUpViewController.swift */; };
 		A8156D8020FFCC24005A922D /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8156D7F20FFCC24005A922D /* NewRunViewController.swift */; };
 		A8156D8220FFD463005A922D /* RunDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8156D8120FFD463005A922D /* RunDetailsViewController.swift */; };
 		A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816269220FD34F8006F09FE /* LoginScreenViewController.swift */; };
@@ -22,9 +26,16 @@
 		A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129320FD23A8001F8D50 /* Assets.xcassets */; };
 		A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129520FD23A8001F8D50 /* LaunchScreen.storyboard */; };
 		A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129E20FD2748001F8D50 /* LoginScreen.storyboard */; };
+		C12DFEED1BDB546C1A1CBA14 /* Pods_FrRunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E3F4ECD3E5616A16230C88 /* Pods_FrRunner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28F2D07DE3985672BED3BE74 /* Pods-FrRunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrRunner.release.xcconfig"; path = "Pods/Target Support Files/Pods-FrRunner/Pods-FrRunner.release.xcconfig"; sourceTree = "<group>"; };
+		86E3F4ECD3E5616A16230C88 /* Pods_FrRunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrRunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80A4F602123593F00359EB0 /* RunsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsHistoryViewController.swift; sourceTree = "<group>"; };
+		A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		A80A4F662125B50800359EB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A80A4F682125C54400359EB0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8156D7F20FFCC24005A922D /* NewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		A8156D8120FFD463005A922D /* RunDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunDetailsViewController.swift; sourceTree = "<group>"; };
 		A816269220FD34F8006F09FE /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +53,7 @@
 		A8F8129620FD23A8001F8D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8F8129820FD23A8001F8D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8F8129E20FD2748001F8D50 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		E8775D7C7CE65E4AE91C86A5 /* Pods-FrRunner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrRunner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FrRunner/Pods-FrRunner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +61,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12DFEED1BDB546C1A1CBA14 /* Pods_FrRunner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C427C4C8D6012C086028EED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86E3F4ECD3E5616A16230C88 /* Pods_FrRunner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EA279DD6962D2115E2D578E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8775D7C7CE65E4AE91C86A5 /* Pods-FrRunner.debug.xcconfig */,
+				28F2D07DE3985672BED3BE74 /* Pods-FrRunner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A80A4F5F2123592500359EB0 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A80A4F6221235E7400359EB0 /* Cell */,
+				A80A4F602123593F00359EB0 /* RunsHistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		A80A4F6221235E7400359EB0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A80A4F652125AB4C00359EB0 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		A8156D7E20FFCC04005A922D /* Run */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +158,8 @@
 				A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */,
 				A8F8128B20FD23A7001F8D50 /* FrRunner */,
 				A8F8128A20FD23A7001F8D50 /* Products */,
+				5EA279DD6962D2115E2D578E /* Pods */,
+				3C427C4C8D6012C086028EED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +179,7 @@
 				A8F812A120FD2826001F8D50 /* CoreData */,
 				A8F812A020FD280C001F8D50 /* Main */,
 				A8F8128C20FD23A7001F8D50 /* AppDelegate.swift */,
+				A80A4F662125B50800359EB0 /* GoogleService-Info.plist */,
 				A8F8129320FD23A8001F8D50 /* Assets.xcassets */,
 				A8F8129820FD23A8001F8D50 /* Info.plist */,
 			);
@@ -148,22 +205,25 @@
 		A8F812A220FD2844001F8D50 /* Functionalities */ = {
 			isa = PBXGroup;
 			children = (
+				A80A4F652125AB4C00359EB0 /* Events */,
+				A80A4F5F2123592500359EB0 /* History */,
 				A816D77B211732AE00246F37 /* Locations */,
 				A816D776211730FD00246F37 /* Converter */,
 				A8156D7E20FFCC04005A922D /* Run */,
 				A8A6242820FE7E24008B21FD /* Base */,
-				A8F812A320FD2851001F8D50 /* Login */,
+				A8F812A320FD2851001F8D50 /* Login&SignUp */,
 			);
 			path = Functionalities;
 			sourceTree = "<group>";
 		};
-		A8F812A320FD2851001F8D50 /* Login */ = {
+		A8F812A320FD2851001F8D50 /* Login&SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				A8F8129E20FD2748001F8D50 /* LoginScreen.storyboard */,
 				A816269220FD34F8006F09FE /* LoginScreenViewController.swift */,
+				A80A4F682125C54400359EB0 /* SignUpViewController.swift */,
 			);
-			path = Login;
+			path = "Login&SignUp";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8F8129B20FD23A8001F8D50 /* Build configuration list for PBXNativeTarget "FrRunner" */;
 			buildPhases = (
+				872EAE33A8875E54E8FCF9EA /* [CP] Check Pods Manifest.lock */,
 				A8F8128520FD23A7001F8D50 /* Sources */,
 				A8F8128620FD23A7001F8D50 /* Frameworks */,
 				A8F8128720FD23A7001F8D50 /* Resources */,
+				9B340DEB7AF3C59FF1321732 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,12 +293,56 @@
 			files = (
 				A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
+				A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */,
 				A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */,
 				A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		872EAE33A8875E54E8FCF9EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FrRunner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B340DEB7AF3C59FF1321732 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FrRunner/Pods-FrRunner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrRunner/Pods-FrRunner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A8F8128520FD23A7001F8D50 /* Sources */ = {
@@ -247,9 +353,12 @@
 				A8A6242F20FE8618008B21FD /* FrRunner.xcdatamodeld in Sources */,
 				A816D77D211732C200246F37 /* LocationManager.swift in Sources */,
 				A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */,
+				A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */,
 				A8156D8220FFD463005A922D /* RunDetailsViewController.swift in Sources */,
 				A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */,
 				A816D77F2121A78C00246F37 /* CoreDataStack.swift in Sources */,
+				A80A4F692125C54400359EB0 /* SignUpViewController.swift in Sources */,
+				A80A4F612123593F00359EB0 /* RunsHistoryViewController.swift in Sources */,
 				A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */,
 				A816D77A2117322000246F37 /* FormatDisplay.swift in Sources */,
 				A816D7782117311900246F37 /* UnitConverter.swift in Sources */,
@@ -387,6 +496,7 @@
 		};
 		A8F8129C20FD23A8001F8D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8775D7C7CE65E4AE91C86A5 /* Pods-FrRunner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -405,6 +515,7 @@
 		};
 		A8F8129D20FD23A8001F8D50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28F2D07DE3985672BED3BE74 /* Pods-FrRunner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

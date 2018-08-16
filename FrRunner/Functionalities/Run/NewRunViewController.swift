@@ -24,7 +24,7 @@ class NewRunViewController: UIViewController {
     private let locationManager = LocationManager.shared
     private var seconds = 0
     private var timer: Timer?
-    private var distance = Measurement(value: 0, unit: UnitLength.meters)
+    private var distance = Measurement(value: 0, unit: UnitLength.kilometers)
     private var locationList: [CLLocation] = []
     
     
@@ -70,11 +70,11 @@ class NewRunViewController: UIViewController {
         let newRun = Run(context: CoreDataStack.context)
         newRun.distance = distance.value
         newRun.duration = Int64(Int16(seconds))
-//        newRun.timestamp = Date()
+        newRun.timeStamp = Date ()
         
         for location in locationList {
             let locationObject = Location(context: CoreDataStack.context)
-//            locationObject.timestamp = location.timestamp
+            locationObject.timeStamp = location.timestamp
             locationObject.latitude = location.coordinate.latitude
             locationObject.longitude = location.coordinate.longitude
             newRun.addToLocations(locationObject)
