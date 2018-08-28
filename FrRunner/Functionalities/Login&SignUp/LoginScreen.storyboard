@@ -84,7 +84,8 @@
                     <navigationItem key="navigationItem" title="Login &amp; Sign Up" id="Hdx-Hy-jQv"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="usernameTextLabel" destination="1GU-RX-1h6" id="RoP-YR-PHl"/>
+                        <outlet property="email" destination="1GU-RX-1h6" id="FcM-2m-1Gh"/>
+                        <outlet property="password" destination="olT-NR-f0I" id="PDF-FO-zxQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="422-lL-xNB" userLabel="First Responder" sceneMemberID="firstResponder"/>

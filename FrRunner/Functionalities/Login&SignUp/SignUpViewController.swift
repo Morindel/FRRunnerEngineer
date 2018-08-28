@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+import FirebaseAuth
 class SignUpViewController: UIViewController {
     
     
@@ -42,7 +42,23 @@ class SignUpViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         else {
-            
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
+                if error == nil {
+                    let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
+                    let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
+                    self.present(vc, animated: true, completion: nil);
+                }
+                else{
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
         }
+        
+        
     }
 }
+
