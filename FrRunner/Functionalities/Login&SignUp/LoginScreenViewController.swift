@@ -15,11 +15,11 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     override func viewWillAppear(_ animated: Bool) {
-//        if Auth.auth().currentUser != nil {
-//            let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
-//            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
-//            self.present(vc, animated: true, completion: nil);
-//        }
+        if Auth.auth().currentUser != nil {
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
+            self.present(vc, animated: true, completion: nil);
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

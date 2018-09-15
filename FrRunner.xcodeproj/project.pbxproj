@@ -11,6 +11,9 @@
 		A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */; };
 		A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A80A4F662125B50800359EB0 /* GoogleService-Info.plist */; };
 		A80A4F692125C54400359EB0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F682125C54400359EB0 /* SignUpViewController.swift */; };
+		A80A867C214D9051003057C1 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A867B214D9051003057C1 /* CreateEventViewController.swift */; };
+		A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A867D214D91AC003057C1 /* ChooseLocationViewController.swift */; };
+		A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */; };
 		A8156D8020FFCC24005A922D /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8156D7F20FFCC24005A922D /* NewRunViewController.swift */; };
 		A8156D8220FFD463005A922D /* RunDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8156D8120FFD463005A922D /* RunDetailsViewController.swift */; };
 		A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816269220FD34F8006F09FE /* LoginScreenViewController.swift */; };
@@ -21,7 +24,6 @@
 		A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EFB832110D11A006252A0 /* StoryboardSupport.swift */; };
 		A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A6242920FE7E41008B21FD /* BaseView.storyboard */; };
 		A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242B20FE8034008B21FD /* BaseViewController.swift */; };
-		A8A6242F20FE8618008B21FD /* FrRunner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */; };
 		A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8128C20FD23A7001F8D50 /* AppDelegate.swift */; };
 		A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129320FD23A8001F8D50 /* Assets.xcassets */; };
 		A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129520FD23A8001F8D50 /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 		A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A80A4F662125B50800359EB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A80A4F682125C54400359EB0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A80A867B214D9051003057C1 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		A80A867D214D91AC003057C1 /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
 		A8156D7F20FFCC24005A922D /* NewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		A8156D8120FFD463005A922D /* RunDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunDetailsViewController.swift; sourceTree = "<group>"; };
 		A816269220FD34F8006F09FE /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
@@ -105,8 +109,26 @@
 		A80A4F652125AB4C00359EB0 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				A80A867A214D8F34003057C1 /* List */,
+				A80A8679214D8F29003057C1 /* CreateEvent */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		A80A8679214D8F29003057C1 /* CreateEvent */ = {
+			isa = PBXGroup;
+			children = (
+				A80A867B214D9051003057C1 /* CreateEventViewController.swift */,
+				A80A867D214D91AC003057C1 /* ChooseLocationViewController.swift */,
+			);
+			path = CreateEvent;
+			sourceTree = "<group>";
+		};
+		A80A867A214D8F34003057C1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		A8156D7E20FFCC04005A922D /* Run */ = {
@@ -352,7 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8156D8020FFCC24005A922D /* NewRunViewController.swift in Sources */,
-				A8A6242F20FE8618008B21FD /* FrRunner.xcdatamodeld in Sources */,
+				A80A867C214D9051003057C1 /* CreateEventViewController.swift in Sources */,
 				A816D77D211732C200246F37 /* LocationManager.swift in Sources */,
 				A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */,
 				A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */,
@@ -364,7 +386,9 @@
 				A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */,
 				A816D77A2117322000246F37 /* FormatDisplay.swift in Sources */,
 				A816D7782117311900246F37 /* UnitConverter.swift in Sources */,
+				A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */,
 				A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */,
+				A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
