@@ -14,6 +14,8 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     @IBOutlet weak var map: MKMapView!
     
+    var delegate  : ChooseLocationViewControllerDelegate?
+    
     var coordinate : CLLocationCoordinate2D?
     var annotation : MKPointAnnotation?
     let locationManager = CLLocationManager()
@@ -33,7 +35,7 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
         }
         
         if let userLocation = self.locationManager.location?.coordinate {
-            let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 200, 200)
+            let viewRegion = MKCoordinateRegion.init(center: userLocation, latitudinalMeters: 200, longitudinalMeters: 200)
             map.setRegion(viewRegion, animated: false)
         }
         
@@ -46,7 +48,7 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     
     @IBAction func locationSelected(_ sender: UILongPressGestureRecognizer) {
-        if sender.state != UIGestureRecognizerState.began { return }
+        if sender.state != UIGestureRecognizer.State.began { return }
         
         let touchLocation = sender.location(in: map)
         let locationCoordinate = map.convert(touchLocation, toCoordinateFrom: map)
@@ -58,6 +60,7 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
+        map.setCenter(locationCoordinate, animated: true)
         
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
             
@@ -68,24 +71,30 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
             // Address dictionary
             //            print(placeMark.addressDictionary ?? <#default value#>)
             
-            // Location name
-            if let locationName = placeMark.addressDictionary!["Name"] as? NSString {
-                print(locationName)
-            }
             
-            // Street address
-            if let street = placeMark.addressDictionary!["Thoroughfare"] as? NSString {
-                print(street)
-                self.annotation?.title = street as String
-            }
+            self.setEventLocation(placeMark: placeMark)
             
-            // City
-            if let city = placeMark.addressDictionary!["City"] as? NSString {
-                print(city)
-            }
+            //            print(locationName)
             
         })
     }
     
+    func setEventLocation(placeMark:CLPlacemark?) {
+        
+        let eventLocationName = " \(placeMark?.thoroughfare ?? "") \(placeMark?.subThoroughfare ?? "")"
+        
+        let alertController = UIAlertController(title: "Save location", message: "Do you want to save \(eventLocationName) as your event location?", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+            self.delegate?.setEventLocation(placeMark: placeMark ?? nil)
+            self.navigationController?.popViewController(animated: true)
+        })
+        
+        present(alertController, animated: true)
+    }
     
+}
+
+protocol ChooseLocationViewControllerDelegate : class {
+    func setEventLocation(placeMark : CLPlacemark?)
 }

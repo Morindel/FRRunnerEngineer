@@ -108,7 +108,7 @@ private func loadMap() {
     }
     
     mapView.setRegion(region, animated: true)
-    mapView.add(polyLine())
+    mapView.addOverlay(polyLine())
 }
     
 }

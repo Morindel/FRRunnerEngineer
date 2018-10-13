@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A807CFF32157ADE2007A5468 /* ChooseLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A807CFF22157ADE2007A5468 /* ChooseLocation.storyboard */; };
 		A80A4F612123593F00359EB0 /* RunsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F602123593F00359EB0 /* RunsHistoryViewController.swift */; };
 		A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */; };
 		A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A80A4F662125B50800359EB0 /* GoogleService-Info.plist */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		28F2D07DE3985672BED3BE74 /* Pods-FrRunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrRunner.release.xcconfig"; path = "Pods/Target Support Files/Pods-FrRunner/Pods-FrRunner.release.xcconfig"; sourceTree = "<group>"; };
 		86E3F4ECD3E5616A16230C88 /* Pods_FrRunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrRunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A807CFF22157ADE2007A5468 /* ChooseLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseLocation.storyboard; sourceTree = "<group>"; };
 		A80A4F602123593F00359EB0 /* RunsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsHistoryViewController.swift; sourceTree = "<group>"; };
 		A80A4F6321235E9800359EB0 /* RunsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A80A4F662125B50800359EB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				A80A867B214D9051003057C1 /* CreateEventViewController.swift */,
 				A80A867D214D91AC003057C1 /* ChooseLocationViewController.swift */,
+				A807CFF22157ADE2007A5468 /* ChooseLocation.storyboard */,
 			);
 			path = CreateEvent;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				TargetAttributes = {
 					A8F8128820FD23A7001F8D50 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -313,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A807CFF32157ADE2007A5468 /* ChooseLocation.storyboard in Resources */,
 				A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
 				A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */,
@@ -534,7 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JFK.FrRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -553,7 +558,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JFK.FrRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
