@@ -23,8 +23,12 @@
 		A816D77D211732C200246F37 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816D77C211732C200246F37 /* LocationManager.swift */; };
 		A816D77F2121A78C00246F37 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816D77E2121A78C00246F37 /* CoreDataStack.swift */; };
 		A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EFB832110D11A006252A0 /* StoryboardSupport.swift */; };
+		A87C6610218DE3E600AEEF79 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C660F218DE3E600AEEF79 /* User.swift */; };
+		A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C6611218DE49D00AEEF79 /* Constants.swift */; };
+		A87C6614218DE71700AEEF79 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C6613218DE71700AEEF79 /* Helper.swift */; };
 		A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A6242920FE7E41008B21FD /* BaseView.storyboard */; };
 		A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242B20FE8034008B21FD /* BaseViewController.swift */; };
+		A8CF7E3D218F5BCB00AC433B /* EventsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CF7E3C218F5BCB00AC433B /* EventsNetworkManager.swift */; };
 		A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8128C20FD23A7001F8D50 /* AppDelegate.swift */; };
 		A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129320FD23A8001F8D50 /* Assets.xcassets */; };
 		A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F8129520FD23A8001F8D50 /* LaunchScreen.storyboard */; };
@@ -50,9 +54,13 @@
 		A816D77C211732C200246F37 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A816D77E2121A78C00246F37 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A86EFB832110D11A006252A0 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
+		A87C660F218DE3E600AEEF79 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A87C6611218DE49D00AEEF79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A87C6613218DE71700AEEF79 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A8A6242920FE7E41008B21FD /* BaseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseView.storyboard; sourceTree = "<group>"; };
 		A8A6242B20FE8034008B21FD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A8A6242E20FE8618008B21FD /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		A8CF7E3C218F5BCB00AC433B /* EventsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsNetworkManager.swift; sourceTree = "<group>"; };
 		A8F8128920FD23A7001F8D50 /* FrRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F8128C20FD23A7001F8D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F8129320FD23A8001F8D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,8 +172,18 @@
 			isa = PBXGroup;
 			children = (
 				A86EFB832110D11A006252A0 /* StoryboardSupport.swift */,
+				A87C6613218DE71700AEEF79 /* Helper.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A87C660E218DE3AB00AEEF79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A87C660F218DE3E600AEEF79 /* User.swift */,
+				A87C6611218DE49D00AEEF79 /* Constants.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A8A6242820FE7E24008B21FD /* Base */ = {
@@ -175,6 +193,14 @@
 				A8A6242B20FE8034008B21FD /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		A8CF7E3B218F5BB500AC433B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A8CF7E3C218F5BCB00AC433B /* EventsNetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A8F8128020FD23A7001F8D50 = {
@@ -199,6 +225,8 @@
 		A8F8128B20FD23A7001F8D50 /* FrRunner */ = {
 			isa = PBXGroup;
 			children = (
+				A8CF7E3B218F5BB500AC433B /* Network */,
+				A87C660E218DE3AB00AEEF79 /* Models */,
 				A86EFB822110D108006252A0 /* SupportingFiles */,
 				A8F812A220FD2844001F8D50 /* Functionalities */,
 				A8F812A120FD2826001F8D50 /* CoreData */,
@@ -354,6 +382,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FrRunner/Pods-FrRunner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -361,6 +390,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -385,8 +415,11 @@
 				A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */,
 				A8156D8220FFD463005A922D /* RunDetailsViewController.swift in Sources */,
 				A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */,
+				A87C6610218DE3E600AEEF79 /* User.swift in Sources */,
+				A87C6614218DE71700AEEF79 /* Helper.swift in Sources */,
 				A816D77F2121A78C00246F37 /* CoreDataStack.swift in Sources */,
 				A80A4F692125C54400359EB0 /* SignUpViewController.swift in Sources */,
+				A8CF7E3D218F5BCB00AC433B /* EventsNetworkManager.swift in Sources */,
 				A80A4F612123593F00359EB0 /* RunsHistoryViewController.swift in Sources */,
 				A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */,
 				A816D77A2117322000246F37 /* FormatDisplay.swift in Sources */,
@@ -394,6 +427,7 @@
 				A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */,
 				A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */,
 				A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */,
+				A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

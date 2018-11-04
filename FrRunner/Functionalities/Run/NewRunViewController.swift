@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 import CoreLocation
-import FirebaseDatabase
 import FirebaseAuth
+
 class NewRunViewController: UIViewController {
     
     @IBOutlet weak var stopButton: UIButton!
@@ -23,9 +23,6 @@ class NewRunViewController: UIViewController {
     private var run : Run?
     
     private var df = DateFormatter()
-
-    var ref : DatabaseReference?
-    
     
     private let locationManager = LocationManager.shared
     private var seconds = 0
@@ -38,10 +35,6 @@ class NewRunViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-        
-        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        ref = Database.database().reference();
         
     }
     
@@ -93,7 +86,6 @@ class NewRunViewController: UIViewController {
         CoreDataStack.saveContext()
         
         run = newRun
-        saveToRealTimeDatabase()
     }
     // MARK : During Run actions
     
@@ -121,20 +113,20 @@ class NewRunViewController: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
-    private func saveToRealTimeDatabase(){
-      
-        let currentDate = df.string(from: Date())
-        
-        let userID = Auth.auth().currentUser!.uid
-        let dataDictionary = [
-            "distance":  distance.value,
-            "duration": seconds,
-            "timeStamp" : currentDate,
-//            "longitude" :,
-//            "latitude "
-            ] as [String : Any]
-        self.ref?.child("Run").child(userID).childByAutoId().setValue(dataDictionary);
-    }
+//    private func saveToRealTimeDatabase(){
+//      
+//        let currentDate = df.string(from: Date())
+//        
+//        let userID = Auth.auth().currentUser!.uid
+//        let dataDictionary = [
+//            "distance":  distance.value,
+//            "duration": seconds,
+//            "timeStamp" : currentDate,
+////            "longitude" :,
+////            "latitude "
+//            ] as [String : Any]
+//        self.ref?.child("Run").child(userID).childByAutoId().setValue(dataDictionary);
+//    }
     // MARK : ButtonsAction
 
     @IBAction func startButtonClicker(_ sender: Any) {

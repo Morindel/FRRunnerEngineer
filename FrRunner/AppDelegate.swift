@@ -20,8 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager.requestWhenInUseAuthorization()
         FirebaseApp.configure()
         
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls[urls.count-1] as URL)
         
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

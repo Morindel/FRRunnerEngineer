@@ -23,6 +23,10 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        EventsNetworkManager.getAllEvents { (Bool) in
+            print("nice")
+        }
+        
         self.annotation = MKPointAnnotation()
         
         self.locationManager.delegate = self
