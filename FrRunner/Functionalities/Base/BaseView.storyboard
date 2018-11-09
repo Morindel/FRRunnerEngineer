@@ -469,6 +469,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="g1Y-ki-E2j"/>
                                                 </constraints>
                                                 <state key="normal" title="Add an event"/>
+                                                <connections>
+                                                    <action selector="addAnEventButtonClicked:" destination="dw2-kG-0Gq" eventType="touchUpInside" id="db2-g5-p95"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Jc-n2Q">
                                                 <rect key="frame" x="16" y="293" width="343" height="30"/>
@@ -530,6 +533,7 @@
                     </view>
                     <connections>
                         <outlet property="distanceTextField" destination="tqD-Xa-DlY" id="IRU-Vh-9xt"/>
+                        <outlet property="eventNameTextField" destination="G1m-CE-rOA" id="Gr2-hf-KTk"/>
                         <outlet property="placeTextField" destination="sif-Bc-XfT" id="Kvk-0H-28h"/>
                     </connections>
                 </viewController>
@@ -578,7 +582,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EventIcon" width="75" height="75"/>
+        <image name="EventIcon" width="37.5" height="37.5"/>
         <image name="RunIcon" width="37.5" height="37.5"/>
     </resources>
 </document>

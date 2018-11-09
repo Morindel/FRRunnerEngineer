@@ -11,7 +11,9 @@ import Alamofire
 
 class EventsNetworkManager
 {
-    
+    let headers = [
+        "Cookie": ""
+    ]
     
     static func getAllEvents(completion: @escaping (Bool) ->Void) {
         
@@ -36,6 +38,27 @@ class EventsNetworkManager
                 
             })
             
+        }
+    }
+    
+    static func createEvent(parameters:Parameters,completion: @escaping (Bool) -> Void) {
+        
+        DispatchQueue.global().async {
+           
+            Alamofire.request(API_HOST+"/events/", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers:  [
+                "Cookie": ""
+                ]).responseString{ response in
+                switch response.result {
+                case .success:
+                    print(response)
+                    
+                    break
+                case .failure(let error):
+                    
+                    print(error)
+                }
+                
+            }
         }
     }
     

@@ -119,8 +119,9 @@
 		A80A4F652125AB4C00359EB0 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				A80A867A214D8F34003057C1 /* List */,
+				A85A0D4421963E9B00B826A0 /* AddExistingEvent */,
 				A80A8679214D8F29003057C1 /* CreateEvent */,
+				A80A867A214D8F34003057C1 /* List */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -166,6 +167,13 @@
 				A816D77C211732C200246F37 /* LocationManager.swift */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		A85A0D4421963E9B00B826A0 /* AddExistingEvent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddExistingEvent;
 			sourceTree = "<group>";
 		};
 		A86EFB822110D108006252A0 /* SupportingFiles */ = {
