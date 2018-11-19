@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     /*Signup with username and password*/
     func signUp(username:String,password:String) {
         let params = ["username":username,"password":password] as [String:Any]
-        Alamofire.request(API_HOST+"auth/signup",method:.post,parameters:params).responseData
+        Alamofire.request(API_HOST+"/auth/signup",method:.post,parameters:params).responseData
             { response in switch response.result {
             case .success(let data):
                 switch response.response?.statusCode ?? -1 {

@@ -51,11 +51,11 @@ class EventsNetworkManager
                 switch response.result {
                 case .success:
                     print(response)
-                    
+                    completion(true)
                     break
-                case .failure(let error):
                     
-                    print(error)
+                case .failure(let _):
+                    completion(false)
                 }
                 
             }

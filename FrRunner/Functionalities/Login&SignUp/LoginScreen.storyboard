@@ -27,19 +27,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJs-XZ-hRD">
-                                <rect key="frame" x="100" y="440.5" width="175" height="40"/>
-                                <color key="backgroundColor" red="0.44560350319754582" green="0.66834998550249991" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hmv-0a-cxm"/>
-                                </constraints>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="showBaseViewController:" destination="Mvl-S3-eQi" eventType="touchUpInside" id="VP4-e2-eBh"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1GU-RX-1h6">
                                 <rect key="frame" x="60" y="274.5" width="255" height="50"/>
                                 <constraints>
@@ -50,7 +37,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN6-7I-jhg">
-                                <rect key="frame" x="100" y="500.5" width="175" height="40"/>
+                                <rect key="frame" x="100" y="490.5" width="175" height="30"/>
                                 <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,21 +50,17 @@
                         <color key="backgroundColor" red="0.25679033576228194" green="0.44860794213725441" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="1GU-RX-1h6" firstAttribute="leading" secondItem="cCt-NT-TdZ" secondAttribute="leading" constant="60" id="5KN-62-WuY"/>
-                            <constraint firstItem="nN6-7I-jhg" firstAttribute="height" secondItem="RJs-XZ-hRD" secondAttribute="height" id="5uh-LP-otm"/>
+                            <constraint firstItem="cCt-NT-TdZ" firstAttribute="trailing" secondItem="nN6-7I-jhg" secondAttribute="trailing" constant="100" id="8LY-Ef-uPU"/>
                             <constraint firstItem="olT-NR-f0I" firstAttribute="height" secondItem="1GU-RX-1h6" secondAttribute="height" id="CF6-Rx-hia"/>
                             <constraint firstItem="olT-NR-f0I" firstAttribute="top" secondItem="1GU-RX-1h6" secondAttribute="bottom" constant="16" id="EC3-X2-AF3"/>
                             <constraint firstItem="1GU-RX-1h6" firstAttribute="centerX" secondItem="cCt-NT-TdZ" secondAttribute="centerX" id="FN3-hV-3l6"/>
                             <constraint firstItem="cCt-NT-TdZ" firstAttribute="trailing" secondItem="1GU-RX-1h6" secondAttribute="trailing" constant="60" id="FWE-X6-AU7"/>
                             <constraint firstItem="nN6-7I-jhg" firstAttribute="leading" secondItem="cCt-NT-TdZ" secondAttribute="leading" constant="100" id="Hf5-Jy-f3v"/>
                             <constraint firstItem="cCt-NT-TdZ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nN6-7I-jhg" secondAttribute="bottom" constant="126.5" id="WcM-Lx-ZrG"/>
-                            <constraint firstItem="nN6-7I-jhg" firstAttribute="width" secondItem="RJs-XZ-hRD" secondAttribute="width" id="h4V-oH-Qmq"/>
                             <constraint firstItem="olT-NR-f0I" firstAttribute="centerX" secondItem="cCt-NT-TdZ" secondAttribute="centerX" id="lRd-sK-HGD"/>
                             <constraint firstItem="olT-NR-f0I" firstAttribute="width" secondItem="1GU-RX-1h6" secondAttribute="width" id="nQz-hr-ifg"/>
-                            <constraint firstItem="RJs-XZ-hRD" firstAttribute="leading" secondItem="cCt-NT-TdZ" secondAttribute="leading" constant="100" id="o9p-Vo-izC"/>
-                            <constraint firstItem="cCt-NT-TdZ" firstAttribute="trailing" secondItem="RJs-XZ-hRD" secondAttribute="trailing" constant="100" id="oJr-OW-Z79"/>
-                            <constraint firstItem="RJs-XZ-hRD" firstAttribute="top" secondItem="olT-NR-f0I" secondAttribute="bottom" constant="50" id="vpT-4t-XNK"/>
                             <constraint firstItem="olT-NR-f0I" firstAttribute="centerY" secondItem="cCt-NT-TdZ" secondAttribute="centerY" id="x4B-jR-aWr"/>
-                            <constraint firstItem="nN6-7I-jhg" firstAttribute="top" secondItem="RJs-XZ-hRD" secondAttribute="bottom" constant="20" id="xKd-P0-uFH"/>
+                            <constraint firstItem="nN6-7I-jhg" firstAttribute="top" secondItem="olT-NR-f0I" secondAttribute="bottom" constant="100" id="zaR-3d-AQW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cCt-NT-TdZ"/>
                     </view>

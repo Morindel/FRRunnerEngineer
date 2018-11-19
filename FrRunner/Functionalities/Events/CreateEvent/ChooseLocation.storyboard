@@ -13,7 +13,7 @@
         <!--Choose Location View Controller-->
         <scene sceneID="VLw-83-oiF">
             <objects>
-                <viewController storyboardIdentifier="ChooseLocation" id="DrU-R9-b0Z" customClass="ChooseLocationViewController" customModule="FrRunner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseLocationViewController" id="DrU-R9-b0Z" customClass="ChooseLocationViewController" customModule="FrRunner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Bl-tf-EmR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
