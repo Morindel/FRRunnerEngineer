@@ -21,12 +21,13 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     
-    private var eventName : String?
-    private var distance : String?
+    @IBOutlet weak var descriptionTextView: UITextView!
     
+    private var eventName : String?
+    private var distance : Double?
     private var locationName : String?
     private var date : Date?
-    
+    private var eventDescription: String?
     
     private var latitude : Double?
     private var longitude : Double?
@@ -34,6 +35,9 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
     private var datePicker : UIDatePicker?
     
     private let dateFormatter = DateFormatter()
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     static func newInstanceWithEvent(event:Event) -> UIViewController{
         let storyboard = UIStoryboard(name: "CreateEvent", bundle: nil)
@@ -43,11 +47,12 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
         }
         
         viewController.eventName = event.name
-        viewController.distance = event.distance
+        viewController.distance = Double(round(1000*event.distance)/1000)
         viewController.date = event.date
         viewController.locationName = event.locationName
         viewController.latitude = event.latitude
         viewController.longitude = event.longitude
+        viewController.eventDescription = event.eventDescription
         
         return viewController
     }
@@ -56,6 +61,9 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
         super.viewDidLoad()
         
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
         
         self.setupDatePicker()
         self.setupTextField()
@@ -88,7 +96,8 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
     
     func setText(){
         self.eventNameTextField.text = self.eventName
-        self.distanceTextField.text = self.distance
+        self.distanceTextField.text = String(
+            "\(self.distance ?? 0.000)")
         self.placeTextField.text = self.locationName
         
         if let datee = self.date{
@@ -96,6 +105,8 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
             self.dateTextField.text = tempDate
             
         }
+        
+        self.descriptionTextView.text = self.eventDescription
     }
    
     //
@@ -109,6 +120,7 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
     @objc func dateChanged(datePicker: UIDatePicker){
         
         self.dateTextField.text = dateFormatter.string(from: datePicker.date)
+        self.date = datePicker.date
     }
     
     func setEventLocation(placeMark: CLPlacemark?) {
@@ -126,11 +138,18 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
     }
     
     @IBAction func selectLocationButtonClicked(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "ChooseLocation", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChooseLocationViewController") as! ChooseLocationViewController
+        if let longitude = self.longitude, let latitude = self.latitude{
+             let vc = ChooseLocationViewController.newInstanceWithLocation(coordinate: CLLocationCoordinate2D(latitude: latitude , longitude: longitude)) as! ChooseLocationViewController
+            vc.delegate = self
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+              let vc = ChooseLocationViewController.newInstance() as! ChooseLocationViewController
+            vc.delegate = self
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
-        vc.delegate = self
-        
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func addAnEventButtonClicked(_ sender: Any) {
@@ -149,28 +168,47 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
             return
         }
         
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        
         let parameters = [
             "title":title,
+            "createdBy":username,
             "distance":distance,
+            "eventDescription":self.descriptionTextView.text,
             "date":stringDate,
             "locationName":place,
             "longitude":self.longitude ?? 0.0,
             "latitude":self.latitude ?? 0.0] as [String : AnyObject]
-        EventsNetworkManager.createEvent(parameters:parameters) { (Bool) in
-            self.navigationController?.popViewController(animated: true)
+        EventsNetworkManager.createEvent(parameters:parameters) { isCreated in
+            
+            if(isCreated){
+                Helper.showAlertWithCompletionController(viewController: self, title: "Event created", message: "Event created successfully")
+                
+            } else {
+                Helper.showAlertWithCompletionController(viewController: self, title: "Event not created", message: "Event couldn't be created")
+            }
         }
     }
     
-}
-
-extension DateFormatter {
-    func convertDateFormater(_ date: String) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
-        let date = dateFormatter.date(from: date)
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return  dateFormatter.string(from: date!)
+    //MARK : keyboard
+    
+    @objc func keyboardWillShow(notification:NSNotification){
         
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
     }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+    
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JS5-GZ-qnr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JS5-GZ-qnr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -378,8 +378,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGW-Pa-a1Y">
-                                <rect key="frame" x="20" y="224" width="335" height="80"/>
-                                <color key="backgroundColor" red="1" green="0.98989321610000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="20" y="144" width="335" height="80"/>
+                                <color key="backgroundColor" red="0.72033201551168413" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="cin-Xh-Ht3"/>
                                 </constraints>
@@ -389,21 +389,34 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6k-7L-JZc">
-                                <rect key="frame" x="16" y="364" width="343" height="80"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="16" y="284" width="343" height="80"/>
+                                <color key="backgroundColor" red="0.71764705882352942" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add an event from RunLog.com"/>
                                 <connections>
                                     <segue destination="ypl-Ou-ZvM" kind="show" id="bvG-W8-lOw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbo-F0-Tqw">
+                                <rect key="frame" x="16" y="424" width="343" height="80"/>
+                                <color key="backgroundColor" red="0.71764705882352942" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get events"/>
+                                <connections>
+                                    <segue destination="CXT-OF-7fz" kind="show" id="1be-gP-ycc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="G6k-7L-JZc" firstAttribute="leading" secondItem="19z-zq-ARA" secondAttribute="leading" constant="16" id="3eK-SX-bR8"/>
-                            <constraint firstItem="SGW-Pa-a1Y" firstAttribute="top" secondItem="19z-zq-ARA" secondAttribute="top" constant="160" id="OSd-Ur-7hA"/>
+                            <constraint firstItem="pbo-F0-Tqw" firstAttribute="width" secondItem="G6k-7L-JZc" secondAttribute="width" id="HSA-cI-iC1"/>
+                            <constraint firstItem="pbo-F0-Tqw" firstAttribute="centerX" secondItem="19z-zq-ARA" secondAttribute="centerX" id="NOK-aj-ah4"/>
+                            <constraint firstItem="SGW-Pa-a1Y" firstAttribute="top" secondItem="19z-zq-ARA" secondAttribute="top" constant="80" id="OSd-Ur-7hA"/>
                             <constraint firstItem="19z-zq-ARA" firstAttribute="trailing" secondItem="G6k-7L-JZc" secondAttribute="trailing" constant="16" id="SoI-fc-tJ3"/>
                             <constraint firstItem="19z-zq-ARA" firstAttribute="trailing" secondItem="SGW-Pa-a1Y" secondAttribute="trailing" constant="20" id="a8i-GI-gGT"/>
+                            <constraint firstItem="pbo-F0-Tqw" firstAttribute="height" secondItem="G6k-7L-JZc" secondAttribute="height" id="fhm-Z5-ovM"/>
                             <constraint firstItem="G6k-7L-JZc" firstAttribute="top" secondItem="SGW-Pa-a1Y" secondAttribute="bottom" constant="60" id="jYb-J6-8dL"/>
                             <constraint firstItem="SGW-Pa-a1Y" firstAttribute="leading" secondItem="19z-zq-ARA" secondAttribute="leading" constant="20" id="oXs-M0-Qbf"/>
+                            <constraint firstItem="pbo-F0-Tqw" firstAttribute="top" secondItem="G6k-7L-JZc" secondAttribute="bottom" constant="60" id="yiu-dS-e1y"/>
                             <constraint firstItem="G6k-7L-JZc" firstAttribute="height" secondItem="SGW-Pa-a1Y" secondAttribute="height" id="yzY-id-tYO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="19z-zq-ARA"/>
@@ -413,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4a9-j7-FEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633" y="742"/>
+            <point key="canvasLocation" x="-634.39999999999998" y="741.67916041979015"/>
         </scene>
         <!--CreateEvent-->
         <scene sceneID="VRz-L3-lxD">
@@ -422,6 +435,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Er-hC-djs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="150" y="780"/>
+        </scene>
+        <!--EventPage-->
+        <scene sceneID="TLP-XK-h3C">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="EventPageController" storyboardName="EventPage" id="CXT-OF-7fz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MF9-Qj-RRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-992" y="1179"/>
         </scene>
         <!--AddExistingEvent-->
         <scene sceneID="5ge-xy-xTQ">

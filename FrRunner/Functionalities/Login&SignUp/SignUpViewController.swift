@@ -56,13 +56,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     /*Signup with username and password*/
     func signUp(username:String,password:String) {
         let params = ["username":username,"password":password] as [String:Any]
-        Alamofire.request(API_HOST+"/auth/signup",method:.post,parameters:params).responseData
+        Alamofire.request(API_HOST+"/signup",method:.post,parameters:params).responseData
             { response in switch response.result {
             case .success(let data):
                 switch response.response?.statusCode ?? -1 {
                 case 200:
                     do {
-                        User.current = try JSONDecoder().decode(User.self, from: data)
+                          let user = try?JSONDecoder().decode(User.self, from: data)
+                        UserDefaults.standard.set(user?.username,forKey:"username")
+                        
+                        LoginScreenViewController.getToken(params: params)
                         self.email.text = ""
                         self.confirmPassword.text = ""
                         let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
@@ -81,6 +84,5 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
         }
     }
-    
 }
 

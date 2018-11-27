@@ -12,7 +12,16 @@ import UIKit
 class Helper {
     static func showAlert(viewController:UIViewController,title:String?,message:String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let dismiss = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        let dismiss = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(dismiss)
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
+    static func showAlertWithCompletionController(viewController:UIViewController,title:String?,message:String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
+            viewController.navigationController?.popToRootViewController(animated: true)
+        }
         alert.addAction(dismiss)
         viewController.present(alert, animated: true, completion: nil)
     }

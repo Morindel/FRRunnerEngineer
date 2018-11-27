@@ -62,7 +62,7 @@ class LoadingView: UIView {
     }
     
     private func animateLoadingIcon() {
-        UIView.animate(withDuration: 0.6, delay: 0, options: [.curveEaseInOut, .repeat], animations: { [weak self] in
+        UIView.animate(withDuration: 0.6, delay: 0, options: [.repeat], animations: { [weak self] in
             self?.loadingIconImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
             }, completion: nil)
     }

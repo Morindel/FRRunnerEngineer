@@ -11,28 +11,29 @@ import UIKit
 import FirebaseAuth
 import Alamofire
 
+
 class LoginScreenViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        //        if Auth.auth().currentUser != nil {
-        //            let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
-        //            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
-        //            self.present(vc, animated: true, completion: nil);
-        //        }
-    }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //                if isLoggedIn(){
+    //                    let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
+    //                    let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
+    //                    self.present(vc, animated: true, completion: nil);
+    //                }
+    //    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
-        if let data = UserDefaults.standard.data(forKey: "user") {
-            didLogin(userData: data)
-        }  
+                 if isLoggedIn() {
+                    didLogin()
+                }
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,12 +74,22 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
     /*Login with username and password*/
     func login(username:String,password:String) {
         let params = ["username":username,"password":password] as [String:Any]
-        Alamofire.request(API_HOST+"/auth/login",method:.post,parameters:params).responseData
+        Alamofire.request(API_HOST+"/login",method:.post,parameters:params).responseJSON
             { response in switch response.result {
-            case .success(let data):
+            case .success:
                 switch response.response?.statusCode ?? -1 {
                 case 200:
-                    self.didLogin(userData: data)
+                    guard let data = response.data else {
+                        return
+                    }
+                    
+                    let user = try?JSONDecoder().decode(User.self, from: data)
+                    UserDefaults.standard.set(user?.username,forKey:"username")
+                    
+                    LoginScreenViewController.getToken(params: params)
+                    
+                    self.didLogin()
+                    
                 case 401:
                     Helper.showAlert(viewController: self, title: "Oops", message: "Username or Password Incorrect")
                 default:
@@ -90,21 +101,41 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    /*User login was successful
-     - we segue to inbox and initialize User.current*/
-    func didLogin(userData:Data) {
-        do {
-            //decode data into user object
-            User.current = try JSONDecoder().decode(User.self, from: userData)
+    func didLogin() {
+
             usernameTextField.text = ""
             passwordTextField.text = ""
+            
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+            UserDefaults.standard.synchronize()
+            
             self.view.endEditing(false)
             let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
             let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
-            self.present(vc, animated: true, completion: nil);
+            self.present(vc, animated: true, completion: nil)
+//            self.dismiss(animated: false, completion: nil)
+        
+    }
+    
+    static func getToken(params:[String:Any]) {
+        Alamofire.request(API_HOST+"/api-token-auth/",method:.post,parameters:params).responseJSON(completionHandler: { response in
             
-        } catch {
-            Helper.showAlert(viewController: self,title: "Oops!",message: error.localizedDescription)
-        }
+            guard let data = response.data else{
+                return
+            }
+            
+            guard let token = try? JSONDecoder().decode(Token.self, from: data) else{
+                print("No token")
+                return
+            }
+            
+            UserDefaults.standard.set(token.token, forKey: "token")
+            
+        })
+        
+    }
+    
+    private func isLoggedIn() -> Bool {
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
 }

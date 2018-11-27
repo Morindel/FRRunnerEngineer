@@ -13,3 +13,7 @@ struct User:Codable {
     var id: String
     var username: String
 }
+
+struct Token:Codable {
+    let token: String?
+}

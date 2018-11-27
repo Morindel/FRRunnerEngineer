@@ -20,13 +20,29 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
     var annotation : MKPointAnnotation?
     let locationManager = CLLocationManager()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    static func newInstance() -> UIViewController{
+        let storyboard = UIStoryboard(name: "ChooseLocation", bundle: nil)
         
-        EventsNetworkManager.getAllEvents { (Bool) in
-            print("nice")
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ChooseLocationViewController") as? ChooseLocationViewController else {
+            return UIViewController()
+        }
+
+        return viewController
+    }
+    
+    static func newInstanceWithLocation(coordinate:CLLocationCoordinate2D) -> UIViewController{
+        let storyboard = UIStoryboard(name: "ChooseLocation", bundle: nil)
+        
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ChooseLocationViewController") as? ChooseLocationViewController else {
+            return UIViewController()
         }
         
+        viewController.coordinate = coordinate
+        return viewController
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.annotation = MKPointAnnotation()
         
         self.locationManager.delegate = self
@@ -47,6 +63,12 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
         DispatchQueue.main.async {
             self.locationManager.startUpdatingLocation()
         }
+        
+        guard let coordinate = self.coordinate else {
+            return
+        }
+        
+        self.map.setCenter(coordinate, animated: false)
         
     }
     
