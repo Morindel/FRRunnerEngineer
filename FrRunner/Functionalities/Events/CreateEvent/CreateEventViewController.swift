@@ -39,15 +39,17 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
     @IBOutlet weak var scrollView: UIScrollView!
     
     
-    static func newInstanceWithEvent(event:Event) -> UIViewController{
+    static func newInstanceWithEvent(event:EventModel) -> UIViewController{
         let storyboard = UIStoryboard(name: "CreateEvent", bundle: nil)
         
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateEventViewController") as? CreateEventViewController else {
             return UIViewController()
         }
         
-        viewController.eventName = event.name
-        viewController.distance = Double(round(1000*event.distance)/1000)
+ 
+        
+        viewController.distance = event.distance
+        viewController.eventName = event.title
         viewController.date = event.date
         viewController.locationName = event.locationName
         viewController.latitude = event.latitude

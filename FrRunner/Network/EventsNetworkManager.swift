@@ -64,6 +64,7 @@ class EventsNetworkManager
                             newEvent.longitude = data["longitude"] as? Double ?? 0.0
                             newEvent.distance = data["distance"] as? Double ?? 0.0
                             newEvent.eventStatus = data["eventStatus"] as? String
+                            newEvent.eventDescription = data["eventDescription"] as? String
                             
                             CoreDataStack.saveContext()
                             } }

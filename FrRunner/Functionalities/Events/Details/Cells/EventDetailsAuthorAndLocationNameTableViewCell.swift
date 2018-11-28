@@ -1,5 +1,5 @@
 //
-//  EventDetailsDateTableViewCell.swift
+//  EventDetailsAuthorAndLocationNameTableViewCell.swift
 //  FrRunner
 //
 //  Created by Jakub Kołodziej on 27/11/2018.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class EventDetailsDateTableViewCell: EventDetailsBaseTableViewCell {
+class EventDetailsAuthorAndLocationNameTableViewCell: EventDetailsBaseTableViewCell {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var createdByLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,15 +27,9 @@ class EventDetailsDateTableViewCell: EventDetailsBaseTableViewCell {
     
     override func loadWithEvent(event: Event) {
         
-        guard let eventDate = event.date else {
-            return
-        }
+        self.locationNameLabel.text = "Location: \(event.locationName ?? "none")"
+        self.createdByLabel.text = "Created by: \(event.createdBy ?? "none")"
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        self.dateLabel.text = dateFormatter.string(from: eventDate)
-        self.distanceLabel.text = "Distance : \(event.distance) km"
     }
     
 }

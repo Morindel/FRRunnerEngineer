@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 enum EventListSectionType : Int{
-    case EventListSponsoredSection = 0 , EventListYourSection, EventListOthersSection, EventListSectionCount
+    case EventListYourSection = 0 , EventListSponsoredSection, EventListOthersSection, EventListSectionCount
 }
 
 class EventListViewController : UIViewController,UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate {
@@ -40,6 +40,8 @@ class EventListViewController : UIViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
         
         self.loadData()
+        
+        self.tableView.tableFooterView = UIView()
         
         self.registerCells()
         self.tableView.reloadData()
@@ -124,6 +126,8 @@ class EventListViewController : UIViewController,UITableViewDelegate,UITableView
             return
         }
         
+//        let eventModel = EventModel.init(title: event.name, locationName: event.locationName, eventDescription: event.eventDescription, latitude: event.latitude, longitude: event.longitude, distance: event.distance, date: event.date)
+//
         guard let vc = EventDetailsViewController.newInstanceWithEvent(event: event) as? EventDetailsViewController else {
             return
         }

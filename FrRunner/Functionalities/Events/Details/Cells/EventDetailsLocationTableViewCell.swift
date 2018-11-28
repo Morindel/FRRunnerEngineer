@@ -26,9 +26,14 @@ class EventDetailsLocationTableViewCell: EventDetailsBaseTableViewCell {
     }
     
     override func loadWithEvent(event: Event){
-        self.mapView.setCenter(CLLocationCoordinate2DMake(event.latitude, event.longitude), animated: false)
         
-        let eventCoordinate = CLLocationCoordinate2DMake(event.latitude, event.longitude)
+        let latitude = event.latitude
+        let longitude = event.longitude 
+        
+        let eventCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        self.mapView.setCenter(eventCoordinate, animated: false)
+    
     
         mapRegion = MKCoordinateRegion.init(center: eventCoordinate , span: MKCoordinateSpan.init(latitudeDelta: 0.2, longitudeDelta: 0.2))
         

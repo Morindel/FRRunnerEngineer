@@ -31,12 +31,16 @@ class EventsListSectionCollectionViewCell: UICollectionViewCell {
         switch sectionType {
         case EventListSectionType.EventListSponsoredSection.rawValue:
             self.sectionNameLabel.text = "Official runs"
+            break
         case EventListSectionType.EventListYourSection.rawValue:
             self.sectionNameLabel.text = "Your runs"
+            break
         case EventListSectionType.EventListOthersSection.rawValue:
-            self.sectionNameLabel.text = "Other runs"
+            self.sectionNameLabel.text = "User's run"
+            break
         default:
             self.sectionNameLabel.text = "runs"
+            break
         }
         
     }

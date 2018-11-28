@@ -25,7 +25,7 @@ class AddExistingEventViewController: BaseController,WKNavigationDelegate {
     
     private let dateFormatter = DateFormatter()
     
-    private let event = Event(context: CoreDataStack.context)
+    private var event = EventModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class AddExistingEventViewController: BaseController,WKNavigationDelegate {
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        self.showLoadingView()
+//        self.showLoadingView()x
     }
     
     @IBAction func selectRunButtonClicked(_ sender: Any) {
@@ -171,7 +171,7 @@ class AddExistingEventViewController: BaseController,WKNavigationDelegate {
         dispatchGroup.enter()
         self.webView.evaluateJavaScript("document.getElementsByClassName('summary')[0].innerHTML") { (response, error) in
             if let titleResponse = response {
-                self.event.name = titleResponse as? String
+                self.event.title = titleResponse as? String
                 dispatchGroup.leave()
             } else {
                 Helper.showAlert(viewController: self, title: "Error"

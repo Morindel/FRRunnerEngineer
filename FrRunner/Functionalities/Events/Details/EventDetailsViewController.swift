@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum EventDetailsSection : Int{
-    case EventDetailsLocationSection = 0 , EventDetailsTitleSection, EventDetailsSectionCount
+    case EventDetailsLocationSection = 0 ,EventDetailsDateSection, EventDetailsTitleSection, EventDetailsDescriptionSection, EventDetailsAuthorAndLocationNameSection, EventDetailsSectionCount
 }
 
 class EventDetailsViewController : BaseController, UITableViewDelegate, UITableViewDataSource {
@@ -45,7 +45,9 @@ class EventDetailsViewController : BaseController, UITableViewDelegate, UITableV
     func registerCells(){
         tableView.register(UINib.init(nibName: "EventDetailsLocationTableViewCell", bundle: nil), forCellReuseIdentifier: "EventDetailsLocationTableViewCell")
         tableView.register(UINib.init(nibName: "EventDetailsTitleTableViewCell", bundle: nil), forCellReuseIdentifier: "EventDetailsTitleTableViewCell")
-        
+        tableView.register(UINib.init(nibName: "EventDetailsDateTableViewCell", bundle: nil), forCellReuseIdentifier: "EventDetailsDateTableViewCell")
+        tableView.register(UINib.init(nibName: "EventDetailsAuthorAndLocationNameTableViewCell", bundle: nil), forCellReuseIdentifier: "EventDetailsAuthorAndLocationNameTableViewCell")
+         tableView.register(UINib.init(nibName: "EventDetailsDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "EventDetailsDescriptionTableViewCell")
     }
     
     
@@ -66,8 +68,21 @@ class EventDetailsViewController : BaseController, UITableViewDelegate, UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "EventDetailsLocationTableViewCell", for: indexPath) as! EventDetailsLocationTableViewCell
             break
             
+        case EventDetailsSection.EventDetailsDateSection.rawValue :
+            cell = tableView.dequeueReusableCell(withIdentifier: "EventDetailsDateTableViewCell", for: indexPath) as! EventDetailsDateTableViewCell
+            break
+            
         case EventDetailsSection.EventDetailsTitleSection.rawValue :
-                        cell = tableView.dequeueReusableCell(withIdentifier: "EventDetailsTitleTableViewCell", for: indexPath) as! EventDetailsTitleTableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "EventDetailsTitleTableViewCell", for: indexPath) as! EventDetailsTitleTableViewCell
+            break
+            
+        case EventDetailsSection.EventDetailsAuthorAndLocationNameSection.rawValue :
+            cell =
+            tableView.dequeueReusableCell(withIdentifier: "EventDetailsAuthorAndLocationNameTableViewCell", for: indexPath) as! EventDetailsAuthorAndLocationNameTableViewCell
+            break
+            
+        case EventDetailsSection.EventDetailsDescriptionSection.rawValue :
+            cell =   tableView.dequeueReusableCell(withIdentifier: "EventDetailsDescriptionTableViewCell", for: indexPath) as! EventDetailsDescriptionTableViewCell
             break
             
         default:

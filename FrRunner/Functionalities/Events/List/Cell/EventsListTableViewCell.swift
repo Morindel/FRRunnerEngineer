@@ -25,12 +25,12 @@ class EventsListTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let dateText = dateFormatter.string(from: event.date ?? Date.init())
-        let distanceText = String(format: "%f", Double(round(1000*event.distance)/1000))
-        
-        self.eventNameLabel.text = "Event name : \(event.name ?? "None")"
-        self.eventDateLabel.text = "Event date : \(dateText)"
-        self.locationNameLabel.text = "Location name : \(event.locationName ?? "None")"
-        self.eventDistanceLabel.text = "Event distance : \(distanceText)"
+        let distance = Double(round(1000*event.distance)/1000)
+
+        self.eventNameLabel.text = "Event : \(event.name ?? "None")"
+        self.eventDateLabel.text = "Date : \(dateText)"
+        self.locationNameLabel.text = "Location : \(event.locationName ?? "None")"
+        self.eventDistanceLabel.text = "Distance : \(distance) km"
     }
     
     

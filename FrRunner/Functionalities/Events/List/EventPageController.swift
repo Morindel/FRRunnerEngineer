@@ -59,13 +59,13 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     
     func loadPager() {
         
-        self.pagesControllers = [EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListSponsoredSection),
-                                 EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListYourSection),
-                                 //                                 EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListFriendsSection),
-            
-            EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListOthersSection)
-            
-            ] as? [EventListViewController]
+        self.pagesControllers = [ EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListYourSection),
+        
+        EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListSponsoredSection),
+        
+        EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListOthersSection)
+        
+        ] as? [EventListViewController]
         
     }
     

@@ -51,6 +51,11 @@
 		A8DF38FE21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF38FD21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift */; };
 		A8DF390121AD57940011D17D /* EventDetailsDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF38FF21AD57940011D17D /* EventDetailsDateTableViewCell.swift */; };
 		A8DF390221AD57940011D17D /* EventDetailsDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8DF390021AD57940011D17D /* EventDetailsDateTableViewCell.xib */; };
+		A8DF390521AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF390321AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.swift */; };
+		A8DF390621AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8DF390421AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib */; };
+		A8DF390A21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF390821AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift */; };
+		A8DF390B21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8DF390921AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib */; };
+		A8DF390D21AD5F050011D17D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF390C21AD5F050011D17D /* Event.swift */; };
 		A8EC402121A31FF300968F97 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC402021A31FF300968F97 /* LoadingView.swift */; };
 		A8EC402321A3203300968F97 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EC402221A3203300968F97 /* LoadingView.xib */; };
 		A8EC402621A3208E00968F97 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC402521A3208E00968F97 /* BaseController.swift */; };
@@ -108,6 +113,11 @@
 		A8DF38FD21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsBaseTableViewCell.swift; sourceTree = "<group>"; };
 		A8DF38FF21AD57940011D17D /* EventDetailsDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsDateTableViewCell.swift; sourceTree = "<group>"; };
 		A8DF390021AD57940011D17D /* EventDetailsDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsDateTableViewCell.xib; sourceTree = "<group>"; };
+		A8DF390321AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsAuthorAndLocationNameTableViewCell.swift; sourceTree = "<group>"; };
+		A8DF390421AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsAuthorAndLocationNameTableViewCell.xib; sourceTree = "<group>"; };
+		A8DF390821AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		A8DF390921AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		A8DF390C21AD5F050011D17D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A8EC402021A31FF300968F97 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A8EC402221A3203300968F97 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		A8EC402521A3208E00968F97 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -268,6 +278,7 @@
 			children = (
 				A87C660F218DE3E600AEEF79 /* User.swift */,
 				A87C6611218DE49D00AEEF79 /* Constants.swift */,
+				A8DF390C21AD5F050011D17D /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,15 +322,27 @@
 		A8DF38F021ACA0510011D17D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A8DF390721AD5A900011D17D /* Base */,
+				A8DF390321AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.swift */,
+				A8DF390421AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib */,
+				A8DF38FF21AD57940011D17D /* EventDetailsDateTableViewCell.swift */,
+				A8DF390021AD57940011D17D /* EventDetailsDateTableViewCell.xib */,
 				A8DF38F521ACA0F40011D17D /* EventDetailsLocationTableViewCell.swift */,
 				A8DF38F621ACA0F40011D17D /* EventDetailsLocationTableViewCell.xib */,
 				A8DF38F921AD52FB0011D17D /* EventDetailsTitleTableViewCell.swift */,
 				A8DF38FA21AD52FB0011D17D /* EventDetailsTitleTableViewCell.xib */,
-				A8DF38FD21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift */,
-				A8DF38FF21AD57940011D17D /* EventDetailsDateTableViewCell.swift */,
-				A8DF390021AD57940011D17D /* EventDetailsDateTableViewCell.xib */,
+				A8DF390821AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift */,
+				A8DF390921AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A8DF390721AD5A900011D17D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A8DF38FD21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A8EC401F21A31FE200968F97 /* Tools */ = {
@@ -490,6 +513,7 @@
 				A87B7F0B21A57D2200B70A76 /* EventsListSectionCollectionViewCell.xib in Resources */,
 				A807CFF32157ADE2007A5468 /* ChooseLocation.storyboard in Resources */,
 				A8F8129720FD23A8001F8D50 /* LaunchScreen.storyboard in Resources */,
+				A8DF390B21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib in Resources */,
 				A8024D4221A455C300034F63 /* EventPage.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
 				A87B7F0621A5638000B70A76 /* EventsListTableViewCell.xib in Resources */,
@@ -499,6 +523,7 @@
 				A8DF38F821ACA0F40011D17D /* EventDetailsLocationTableViewCell.xib in Resources */,
 				A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */,
 				A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */,
+				A8DF390621AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib in Resources */,
 				A8EC402321A3203300968F97 /* LoadingView.xib in Resources */,
 				A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */,
 				A85A0D4621963FC700B826A0 /* AddExistingEvent.storyboard in Resources */,
@@ -567,6 +592,7 @@
 				A8DF38FE21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift in Sources */,
 				A8024D4021A4555400034F63 /* EventPageController.swift in Sources */,
 				A8DF38F721ACA0F40011D17D /* EventDetailsLocationTableViewCell.swift in Sources */,
+				A8DF390521AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.swift in Sources */,
 				A8DF38ED21AC9D6F0011D17D /* EventDetailsViewController.swift in Sources */,
 				A8024D3C21A379DB00034F63 /* EventListViewController.swift in Sources */,
 				A80A4F6421235E9800359EB0 /* RunsHistoryTableViewCell.swift in Sources */,
@@ -574,6 +600,7 @@
 				A8F8128D20FD23A7001F8D50 /* AppDelegate.swift in Sources */,
 				A8DF38FB21AD52FB0011D17D /* EventDetailsTitleTableViewCell.swift in Sources */,
 				A87C6610218DE3E600AEEF79 /* User.swift in Sources */,
+				A8DF390D21AD5F050011D17D /* Event.swift in Sources */,
 				A87C6614218DE71700AEEF79 /* Helper.swift in Sources */,
 				A8DF38EA21AA0A8C0011D17D /* NSRegularExpresions.swift in Sources */,
 				A816D77F2121A78C00246F37 /* CoreDataStack.swift in Sources */,
@@ -590,6 +617,7 @@
 				A87B7F0521A5638000B70A76 /* EventsListTableViewCell.swift in Sources */,
 				A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */,
 				A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */,
+				A8DF390A21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift in Sources */,
 				A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */,
 				A8EC402621A3208E00968F97 /* BaseController.swift in Sources */,
 				A8EC402121A31FF300968F97 /* LoadingView.swift in Sources */,
