@@ -26,10 +26,6 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
         
         self.loadPager()
         
-        EventsNetworkManager.getAllEvents { (Bool) in
-            
-        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

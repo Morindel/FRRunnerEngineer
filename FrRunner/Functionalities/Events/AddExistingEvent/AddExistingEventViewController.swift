@@ -41,7 +41,7 @@ class AddExistingEventViewController: BaseController,WKNavigationDelegate {
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-//        self.showLoadingView()x
+        self.showLoadingView()
     }
     
     @IBAction func selectRunButtonClicked(_ sender: Any) {

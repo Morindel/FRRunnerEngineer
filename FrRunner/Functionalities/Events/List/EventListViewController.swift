@@ -14,7 +14,7 @@ enum EventListSectionType : Int{
     case EventListYourSection = 0 , EventListSponsoredSection, EventListOthersSection, EventListSectionCount
 }
 
-class EventListViewController : UIViewController,UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate {
+class EventListViewController : BaseController,UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate {
     
     var type : EventListSectionType?
     
@@ -45,6 +45,13 @@ class EventListViewController : UIViewController,UITableViewDelegate,UITableView
         
         self.registerCells()
         self.tableView.reloadData()
+        
+        self.showLoadingView()
+        
+        EventsNetworkManager.getAllEvents { (Bool) in
+            self.fetchData()
+            self.hideLoadingView()
+        }
     }
     
     //MARK: - LoadData
@@ -65,11 +72,11 @@ class EventListViewController : UIViewController,UITableViewDelegate,UITableView
         
         switch self.type?.rawValue {
         case EventListSectionType.EventListSponsoredSection.rawValue:
-            predicate = NSPredicate(format: "eventStatus == %@", "S")
+            predicate = NSPredicate(format: "eventStatus == %@ AND createdBy != %@", "S",UserDefaults.standard.string(forKey: "username") ?? "checkcheck")
         case EventListSectionType.EventListYourSection.rawValue :
-            predicate = NSPredicate(format: "createdBy == %@", UserDefaults.standard.string(forKey: "username") ?? "user")
+            predicate = NSPredicate(format: "createdBy == %@", UserDefaults.standard.string(forKey: "username") ?? "checkcheck")
         case EventListSectionType.EventListOthersSection.rawValue :
-            predicate = NSPredicate(format: "eventStatus == %@", "N")
+            predicate = NSPredicate(format: "eventStatus == %@ AND createdBy != %@", "N",UserDefaults.standard.string(forKey: "username") ?? "checkcheck")
         default:
             predicate = NSPredicate.init()
         }
@@ -126,8 +133,6 @@ class EventListViewController : UIViewController,UITableViewDelegate,UITableView
             return
         }
         
-//        let eventModel = EventModel.init(title: event.name, locationName: event.locationName, eventDescription: event.eventDescription, latitude: event.latitude, longitude: event.longitude, distance: event.distance, date: event.date)
-//
         guard let vc = EventDetailsViewController.newInstanceWithEvent(event: event) as? EventDetailsViewController else {
             return
         }
