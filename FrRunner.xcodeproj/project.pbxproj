@@ -19,6 +19,8 @@
 		A80A867C214D9051003057C1 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A867B214D9051003057C1 /* CreateEventViewController.swift */; };
 		A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A867D214D91AC003057C1 /* ChooseLocationViewController.swift */; };
 		A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242D20FE8618008B21FD /* FrRunner.xcdatamodeld */; };
+		A81098FC21B58EE5002CC529 /* FriendMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81098FB21B58EE5002CC529 /* FriendMenuViewController.swift */; };
+		A81098FE21B59037002CC529 /* SocialMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A81098FD21B59037002CC529 /* SocialMenu.storyboard */; };
 		A8156D8020FFCC24005A922D /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8156D7F20FFCC24005A922D /* NewRunViewController.swift */; };
 		A8156D8220FFD463005A922D /* RunDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8156D8120FFD463005A922D /* RunDetailsViewController.swift */; };
 		A816269320FD34F8006F09FE /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816269220FD34F8006F09FE /* LoginScreenViewController.swift */; };
@@ -36,6 +38,17 @@
 		A87C6610218DE3E600AEEF79 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C660F218DE3E600AEEF79 /* User.swift */; };
 		A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C6611218DE49D00AEEF79 /* Constants.swift */; };
 		A87C6614218DE71700AEEF79 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C6613218DE71700AEEF79 /* Helper.swift */; };
+		A87CA5C721B19B4900623F2F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5C621B19B4900623F2F /* FriendsViewController.swift */; };
+		A87CA5CD21B4583E00623F2F /* DistanceChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5CB21B4583E00623F2F /* DistanceChallengeViewController.swift */; };
+		A87CA5D021B4585600623F2F /* DistanceChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CA5CF21B4585600623F2F /* DistanceChallenge.storyboard */; };
+		A87CA5D321B5557E00623F2F /* FriendsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5D221B5557E00623F2F /* FriendsPageController.swift */; };
+		A87CA5D521B5558F00623F2F /* FriendsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CA5D421B5558F00623F2F /* FriendsPage.storyboard */; };
+		A87CA5D721B5560E00623F2F /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5D621B5560E00623F2F /* FriendsListViewController.swift */; };
+		A87CA5D921B5561A00623F2F /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CA5D821B5561A00623F2F /* FriendsList.storyboard */; };
+		A87CA5DF21B5647100623F2F /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5DD21B5647100623F2F /* FriendsListTableViewCell.swift */; };
+		A87CA5E021B5647100623F2F /* FriendsRequestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87CA5DE21B5647100623F2F /* FriendsRequestListTableViewCell.xib */; };
+		A87CA5E321B564E400623F2F /* FriendsListSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5E121B564E400623F2F /* FriendsListSectionCollectionViewCell.swift */; };
+		A87CA5E421B564E400623F2F /* FriendsListSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87CA5E221B564E400623F2F /* FriendsListSectionCollectionViewCell.xib */; };
 		A883C51021A187C8007ED5C9 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A883C50F21A187C8007ED5C9 /* CreateEvent.storyboard */; };
 		A8A351A621A059AF00CF019D /* FriendsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */; };
 		A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A6242920FE7E41008B21FD /* BaseView.storyboard */; };
@@ -80,6 +93,8 @@
 		A80A4F682125C54400359EB0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A80A867B214D9051003057C1 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		A80A867D214D91AC003057C1 /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
+		A81098FB21B58EE5002CC529 /* FriendMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMenuViewController.swift; sourceTree = "<group>"; };
+		A81098FD21B59037002CC529 /* SocialMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SocialMenu.storyboard; sourceTree = "<group>"; };
 		A8156D7F20FFCC24005A922D /* NewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		A8156D8120FFD463005A922D /* RunDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunDetailsViewController.swift; sourceTree = "<group>"; };
 		A816269220FD34F8006F09FE /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +112,17 @@
 		A87C660F218DE3E600AEEF79 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A87C6611218DE49D00AEEF79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A87C6613218DE71700AEEF79 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		A87CA5C621B19B4900623F2F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		A87CA5CB21B4583E00623F2F /* DistanceChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceChallengeViewController.swift; sourceTree = "<group>"; };
+		A87CA5CF21B4585600623F2F /* DistanceChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DistanceChallenge.storyboard; sourceTree = "<group>"; };
+		A87CA5D221B5557E00623F2F /* FriendsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPageController.swift; sourceTree = "<group>"; };
+		A87CA5D421B5558F00623F2F /* FriendsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsPage.storyboard; sourceTree = "<group>"; };
+		A87CA5D621B5560E00623F2F /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		A87CA5D821B5561A00623F2F /* FriendsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsList.storyboard; sourceTree = "<group>"; };
+		A87CA5DD21B5647100623F2F /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		A87CA5DE21B5647100623F2F /* FriendsRequestListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsRequestListTableViewCell.xib; sourceTree = "<group>"; };
+		A87CA5E121B564E400623F2F /* FriendsListSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A87CA5E221B564E400623F2F /* FriendsListSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A883C50F21A187C8007ED5C9 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
 		A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNetworkManager.swift; sourceTree = "<group>"; };
 		A8A6242920FE7E41008B21FD /* BaseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseView.storyboard; sourceTree = "<group>"; };
@@ -211,6 +237,15 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		A81098FA21B58EC4002CC529 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A81098FB21B58EE5002CC529 /* FriendMenuViewController.swift */,
+				A81098FD21B59037002CC529 /* SocialMenu.storyboard */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		A8156D7E20FFCC04005A922D /* Run */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +316,79 @@
 				A8DF390C21AD5F050011D17D /* Event.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A87CA5C521B19B2C00623F2F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				A81098FA21B58EC4002CC529 /* Menu */,
+				A87CA5DA21B5566300623F2F /* List */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		A87CA5C821B4581400623F2F /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				A87CA5CA21B4582500623F2F /* Distance */,
+				A87CA5C921B4581B00623F2F /* Time */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		A87CA5C921B4581B00623F2F /* Time */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		A87CA5CA21B4582500623F2F /* Distance */ = {
+			isa = PBXGroup;
+			children = (
+				A87CA5CB21B4583E00623F2F /* DistanceChallengeViewController.swift */,
+				A87CA5CF21B4585600623F2F /* DistanceChallenge.storyboard */,
+			);
+			path = Distance;
+			sourceTree = "<group>";
+		};
+		A87CA5D121B5556500623F2F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		A87CA5DA21B5566300623F2F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A87CA5DB21B5643900623F2F /* Section */,
+				A87CA5DC21B5643E00623F2F /* Cell */,
+				A87CA5D221B5557E00623F2F /* FriendsPageController.swift */,
+				A87CA5D421B5558F00623F2F /* FriendsPage.storyboard */,
+				A87CA5D621B5560E00623F2F /* FriendsListViewController.swift */,
+				A87CA5D821B5561A00623F2F /* FriendsList.storyboard */,
+				A87CA5C621B19B4900623F2F /* FriendsViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		A87CA5DB21B5643900623F2F /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				A87CA5E121B564E400623F2F /* FriendsListSectionCollectionViewCell.swift */,
+				A87CA5E221B564E400623F2F /* FriendsListSectionCollectionViewCell.xib */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		A87CA5DC21B5643E00623F2F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A87CA5DD21B5647100623F2F /* FriendsListTableViewCell.swift */,
+				A87CA5DE21B5647100623F2F /* FriendsRequestListTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A8A6242820FE7E24008B21FD /* Base */ = {
@@ -386,6 +494,7 @@
 		A8F8128B20FD23A7001F8D50 /* FrRunner */ = {
 			isa = PBXGroup;
 			children = (
+				A87CA5D121B5556500623F2F /* Friends */,
 				A8EC401F21A31FE200968F97 /* Tools */,
 				A8CF7E3B218F5BB500AC433B /* Network */,
 				A87C660E218DE3AB00AEEF79 /* Models */,
@@ -420,6 +529,8 @@
 		A8F812A220FD2844001F8D50 /* Functionalities */ = {
 			isa = PBXGroup;
 			children = (
+				A87CA5C821B4581400623F2F /* Challenges */,
+				A87CA5C521B19B2C00623F2F /* Friends */,
 				A8EC402421A3205600968F97 /* BaseView */,
 				A80A4F652125AB4C00359EB0 /* Events */,
 				A80A4F5F2123592500359EB0 /* History */,
@@ -516,14 +627,20 @@
 				A8DF390B21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib in Resources */,
 				A8024D4221A455C300034F63 /* EventPage.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
+				A87CA5E021B5647100623F2F /* FriendsRequestListTableViewCell.xib in Resources */,
+				A87CA5D921B5561A00623F2F /* FriendsList.storyboard in Resources */,
+				A81098FE21B59037002CC529 /* SocialMenu.storyboard in Resources */,
 				A87B7F0621A5638000B70A76 /* EventsListTableViewCell.xib in Resources */,
+				A87CA5D021B4585600623F2F /* DistanceChallenge.storyboard in Resources */,
 				A8024D3E21A37A6C00034F63 /* EventList.storyboard in Resources */,
 				A883C51021A187C8007ED5C9 /* CreateEvent.storyboard in Resources */,
 				A8DF390221AD57940011D17D /* EventDetailsDateTableViewCell.xib in Resources */,
 				A8DF38F821ACA0F40011D17D /* EventDetailsLocationTableViewCell.xib in Resources */,
 				A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */,
+				A87CA5D521B5558F00623F2F /* FriendsPage.storyboard in Resources */,
 				A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */,
 				A8DF390621AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib in Resources */,
+				A87CA5E421B564E400623F2F /* FriendsListSectionCollectionViewCell.xib in Resources */,
 				A8EC402321A3203300968F97 /* LoadingView.xib in Resources */,
 				A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */,
 				A85A0D4621963FC700B826A0 /* AddExistingEvent.storyboard in Resources */,
@@ -586,8 +703,10 @@
 			files = (
 				A8156D8020FFCC24005A922D /* NewRunViewController.swift in Sources */,
 				A80A867C214D9051003057C1 /* CreateEventViewController.swift in Sources */,
+				A87CA5CD21B4583E00623F2F /* DistanceChallengeViewController.swift in Sources */,
 				A85A0D482196406A00B826A0 /* AddExistingEventViewController.swift in Sources */,
 				A816D77D211732C200246F37 /* LocationManager.swift in Sources */,
+				A81098FC21B58EE5002CC529 /* FriendMenuViewController.swift in Sources */,
 				A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */,
 				A8DF38FE21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift in Sources */,
 				A8024D4021A4555400034F63 /* EventPageController.swift in Sources */,
@@ -601,9 +720,11 @@
 				A8DF38FB21AD52FB0011D17D /* EventDetailsTitleTableViewCell.swift in Sources */,
 				A87C6610218DE3E600AEEF79 /* User.swift in Sources */,
 				A8DF390D21AD5F050011D17D /* Event.swift in Sources */,
+				A87CA5D321B5557E00623F2F /* FriendsPageController.swift in Sources */,
 				A87C6614218DE71700AEEF79 /* Helper.swift in Sources */,
 				A8DF38EA21AA0A8C0011D17D /* NSRegularExpresions.swift in Sources */,
 				A816D77F2121A78C00246F37 /* CoreDataStack.swift in Sources */,
+				A87CA5D721B5560E00623F2F /* FriendsListViewController.swift in Sources */,
 				A80A4F692125C54400359EB0 /* SignUpViewController.swift in Sources */,
 				A8CF7E3D218F5BCB00AC433B /* EventsNetworkManager.swift in Sources */,
 				A80A4F612123593F00359EB0 /* RunsHistoryViewController.swift in Sources */,
@@ -612,10 +733,13 @@
 				A816D77A2117322000246F37 /* FormatDisplay.swift in Sources */,
 				A8A351A621A059AF00CF019D /* FriendsNetworkManager.swift in Sources */,
 				A816D7782117311900246F37 /* UnitConverter.swift in Sources */,
+				A87CA5E321B564E400623F2F /* FriendsListSectionCollectionViewCell.swift in Sources */,
 				A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */,
 				A8DF390121AD57940011D17D /* EventDetailsDateTableViewCell.swift in Sources */,
+				A87CA5DF21B5647100623F2F /* FriendsListTableViewCell.swift in Sources */,
 				A87B7F0521A5638000B70A76 /* EventsListTableViewCell.swift in Sources */,
 				A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */,
+				A87CA5C721B19B4900623F2F /* FriendsViewController.swift in Sources */,
 				A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */,
 				A8DF390A21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift in Sources */,
 				A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */,

@@ -25,4 +25,20 @@ class Helper {
         alert.addAction(dismiss)
         viewController.present(alert, animated: true, completion: nil)
     }
+    
+    static func showAlertWithBoolCompletion(viewController:UIViewController,title:String?,message:String?,completion: @escaping (Bool) ->Void) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "No",
+                                      style: .cancel,
+                                      handler: {Bool in completion(false)}))
+        
+        alert.addAction(UIAlertAction(title: "Yes",
+                                      style: .default,
+                                      handler: {Bool in completion(true)}))
+        
+        viewController.present(alert, animated: true, completion: nil)
+
+    }
 }

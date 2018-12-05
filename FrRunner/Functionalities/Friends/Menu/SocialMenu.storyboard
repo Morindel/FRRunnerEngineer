@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Zx-x6-dAW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Friend Menu View Controller-->
+        <scene sceneID="md9-Uf-fry">
+            <objects>
+                <viewController storyboardIdentifier="FriendMenuViewController" id="7Zx-x6-dAW" customClass="FriendMenuViewController" customModule="FrRunner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bnm-Sn-6YD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz6-LI-sKC">
+                                <rect key="frame" x="16" y="100" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ith-tU-Ek9"/>
+                                </constraints>
+                                <state key="normal" title="Send friend request">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendFriendRequestButtonClicked:" destination="7Zx-x6-dAW" eventType="touchUpInside" id="rzj-NR-SgL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjy-il-YP2">
+                                <rect key="frame" x="16" y="220" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Check your friend request">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sP8-iB-jOf" kind="show" id="GiI-h8-3Rv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-hL-23D">
+                                <rect key="frame" x="16" y="340" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Your Friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgU-4B-C92">
+                                <rect key="frame" x="16" y="460" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3T6-hL-23D" firstAttribute="height" secondItem="yjy-il-YP2" secondAttribute="height" id="1Zx-6A-On3"/>
+                            <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="3T6-hL-23D" secondAttribute="trailing" constant="16" id="1wl-Fl-wmX"/>
+                            <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="vgU-4B-C92" secondAttribute="trailing" constant="16" id="EKo-17-V5B"/>
+                            <constraint firstItem="yjy-il-YP2" firstAttribute="top" secondItem="bz6-LI-sKC" secondAttribute="bottom" constant="60" id="Ne7-ey-NLF"/>
+                            <constraint firstItem="bz6-LI-sKC" firstAttribute="top" secondItem="f8q-AJ-0yA" secondAttribute="top" constant="80" id="P9G-8D-16K"/>
+                            <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="yjy-il-YP2" secondAttribute="trailing" constant="16" id="Pdg-wV-PE4"/>
+                            <constraint firstItem="bz6-LI-sKC" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="QdU-Ta-edm"/>
+                            <constraint firstItem="3T6-hL-23D" firstAttribute="top" secondItem="yjy-il-YP2" secondAttribute="bottom" constant="60" id="UyG-0c-bgz"/>
+                            <constraint firstItem="3T6-hL-23D" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="gTj-BB-hyE"/>
+                            <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="bz6-LI-sKC" secondAttribute="trailing" constant="16" id="hDP-na-pwX"/>
+                            <constraint firstItem="vgU-4B-C92" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="jEZ-ZO-lWE"/>
+                            <constraint firstItem="yjy-il-YP2" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="lc8-pq-ghO"/>
+                            <constraint firstItem="vgU-4B-C92" firstAttribute="height" secondItem="3T6-hL-23D" secondAttribute="height" id="qsa-Dp-xBm"/>
+                            <constraint firstItem="yjy-il-YP2" firstAttribute="height" secondItem="bz6-LI-sKC" secondAttribute="height" id="weJ-KA-NQu"/>
+                            <constraint firstItem="vgU-4B-C92" firstAttribute="top" secondItem="3T6-hL-23D" secondAttribute="bottom" constant="60" id="xRT-bq-O4Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f8q-AJ-0yA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SlK-0p-cqN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYM-Nf-gXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3250.4000000000001" y="479.91004497751129"/>
+        </scene>
+        <!--FriendsPage-->
+        <scene sceneID="Zzx-UH-7KG">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="FriendsPageController" storyboardName="FriendsPage" id="sP8-iB-jOf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AHz-fZ-OdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3713" y="350"/>
+        </scene>
+    </scenes>
+</document>

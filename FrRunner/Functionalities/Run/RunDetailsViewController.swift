@@ -40,7 +40,7 @@ class RunDetailsViewController: UIViewController {
         let formattedTime = FormatDisplay.time(seconds)
         let formattedPace = FormatDisplay.pace(distance: distance,
                                                seconds: seconds,
-                                               outputUnit: UnitSpeed.minutesPerMile)
+                                               outputUnit: UnitSpeed.minutesPerKilometer)
         
         distanceLabel.text = "Distance:  \(formattedDistance)"
 //        dateLabel.text = formattedDate

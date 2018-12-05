@@ -1,17 +1,18 @@
 //
-//  EventPageController.swift
+//  FriendsPageController.swift
 //  FrRunner
 //
-//  Created by Jakub Kołodziej on 20/11/2018.
+//  Created by Jakub Kołodziej on 03/12/2018.
 //  Copyright © 2018 Jakub Kołodziej. All rights reserved.
 //
+
 
 import Foundation
 import UIKit
 
-class EventPageController : BaseController,UIPageViewControllerDataSource,UIPageViewControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class FriendsPageController : BaseController,UIPageViewControllerDataSource,UIPageViewControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var pagesControllers : [EventListViewController]?
+    var pagesControllers : [FriendsListViewController]?
     
     var pageController : UIPageViewController?
     var selectedIndexPath : IndexPath?
@@ -21,11 +22,15 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     override func loadView() {
         super.loadView()
         
-        
         self.registerCells()
         
         
         self.loadPager()
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
     }
     
@@ -56,20 +61,17 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     
     func loadPager() {
         
-        self.pagesControllers = [ EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListYourSection),
-        
-        EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListSponsoredSection),
-        
-        EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListOthersSection)
-        
-        ] as? [EventListViewController]
+        self.pagesControllers = [ FriendsListViewController.newInstanceWithFriendsListType(withType: FriendsListSectionType.FriendsListSection),
+                                  FriendsListViewController.newInstanceWithFriendsListType(withType: FriendsListSectionType.FriendsRequestSection)
+            
+            ] as? [FriendsListViewController]
         
     }
     
     //MARK: - CollectioView
     
     func registerCells() {
-        collectionView.register(UINib.init(nibName: "EventsListSectionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EventsListSectionCollectionViewCell")
+        collectionView.register(UINib.init(nibName: "FriendsListSectionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FriendsListSectionCollectionViewCell")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -77,12 +79,12 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return EventListSectionType.EventListSectionCount.rawValue
+        return FriendsListSectionType.FriendsListSectionCount.rawValue
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventsListSectionCollectionViewCell", for: indexPath) as! EventsListSectionCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsListSectionCollectionViewCell", for: indexPath) as! FriendsListSectionCollectionViewCell
         
         if(indexPath == selectedIndexPath){
             cell.isSelected = true
@@ -144,7 +146,7 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     //MARK: - PageView
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        let index : Int = self.pagesControllers?.firstIndex(of:viewController as! EventListViewController) ?? 0
+        let index : Int = self.pagesControllers?.firstIndex(of:viewController as! FriendsListViewController) ?? 0
         
         if(index > 0){
             return self.pagesControllers?[index - 1]
@@ -157,7 +159,7 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        let index : Int = self.pagesControllers?.firstIndex(of: viewController as! EventListViewController) ?? 0
+        let index : Int = self.pagesControllers?.firstIndex(of: viewController as! FriendsListViewController) ?? 0
         
         if(index + 1 < self.pagesControllers?.count ?? 0){
             return self.pagesControllers?[index + 1]
@@ -170,7 +172,7 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-        guard let index = self.pagesControllers?.firstIndex(of: pageViewController.viewControllers?.first as! EventListViewController) else {
+        guard let index = self.pagesControllers?.firstIndex(of: pageViewController.viewControllers?.first as! FriendsListViewController) else {
             return
         }
         

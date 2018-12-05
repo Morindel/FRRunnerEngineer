@@ -38,6 +38,7 @@ class EventsNetworkManager
                 
                 if let json = response.result.value as? [[String : AnyObject]] {
                     
+                    
                     for data in json{
                         guard let eventId = data["id"] as? Int32 else {
                             return
@@ -107,6 +108,72 @@ class EventsNetworkManager
                 }
                 
             }
+        }
+    }
+    
+    
+    static func getFriends(completion: @escaping (Bool) ->Void) {
+        
+        guard let token = UserDefaults.standard.string(forKey: "token") else {
+            print("Token error");
+            return
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        DispatchQueue.global().async {
+            
+            
+            Alamofire.request(API_HOST+"/events/", method: .get, parameters: nil, encoding: JSONEncoding.default, headers:[
+                "Authorization": "Token \(token)",
+                "Accept": "application/json"
+                ]).responseJSON(completionHandler: { response in
+                    
+                    if let json = response.result.value as? [[String : AnyObject]] {
+                        
+                        for data in json{
+                            guard let eventId = data["id"] as? Int32 else {
+                                return
+                            }
+                            
+                            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+                            let predicate = NSPredicate.init(format: "eventId == \(eventId)")
+                            
+                            fetchRequest.predicate = predicate
+                            
+                            do{
+                                let fetchResults = try CoreDataStack.context.fetch(fetchRequest) as? [NSManagedObject]
+                                if(fetchResults!.count == 0){
+                                    let newEvent = Event(context: CoreDataStack.context)
+                                    newEvent.eventId = eventId
+                                    newEvent.createdBy = data["createdBy"] as? String
+                                    newEvent.name =  data["title"] as? String
+                                    newEvent.locationName = data["locationName"] as? String
+                                    
+                                    let dateString = dateFormatter.date(from: data["date"] as? String ?? "")
+                                    
+                                    newEvent.date = dateString
+                                    newEvent.latitude = data["latitude"] as? Double ?? 0.0
+                                    newEvent.longitude = data["longitude"] as? Double ?? 0.0
+                                    newEvent.distance = data["distance"] as? Double ?? 0.0
+                                    newEvent.eventStatus = data["eventStatus"] as? String
+                                    newEvent.eventDescription = data["eventDescription"] as? String
+                                    
+                                    CoreDataStack.saveContext()
+                                } }
+                            catch{
+                                return
+                            }
+                        }
+                    }
+                    
+                    DispatchQueue.main.async {
+                        completion(response.result.isSuccess)
+                    }
+                    
+                })
+            
         }
     }
     

@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct User:Codable {
-    static var current: User!
-    var id: String
+struct User: Codable {
+    var id: Int
     var username: String
 }
 
