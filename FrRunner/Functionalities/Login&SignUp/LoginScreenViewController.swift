@@ -74,6 +74,7 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
     /*Login with username and password*/
     func login(username:String,password:String) {
         let params = ["username":username,"password":password] as [String:Any]
+        print(params)
         Alamofire.request(API_HOST+"/login",method:.post,parameters:params).responseJSON
             { response in switch response.result {
             case .success:
@@ -82,9 +83,15 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
                     guard let data = response.data else {
                         return
                     }
+                    print(response.value)
                     
-                    let user = try?JSONDecoder().decode(User.self, from: data)
-                    UserDefaults.standard.set(user?.username,forKey:"username")
+                    do{
+                        UserDefaults.standard.set(username,forKey:"username")
+                    } catch(let error){
+                        print(error)
+                    }
+                    
+//                    print(UserDefaults.standard.g)
                     
                     LoginScreenViewController.getToken(params: params)
                     

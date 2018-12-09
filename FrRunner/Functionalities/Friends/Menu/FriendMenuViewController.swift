@@ -74,4 +74,24 @@ class FriendMenuViewController: BaseController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    
+    @IBAction func logoutButtonClicked(_ sender: Any) {
+        
+        guard let bundle = Bundle.main.bundleIdentifier else {
+            return
+        }
+        UserDefaults.standard.removePersistentDomain(forName: bundle)
+        
+        AccountNetworkManager.deleteAllData("UserModel")
+        AccountNetworkManager.deleteAllData("FriendRequest")
+        AccountNetworkManager.deleteAllData("Event")
+//        AccountNetworkManager.deleteAllData("Run")
+//        AccountNetworkManager.deleteAllData("Location")
+        
+        let mainStoryboard : UIStoryboard = UIStoryboard(name: "LoginScreen", bundle: nil)
+        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginScreen")
+        self.present(vc, animated: true, completion: nil);
+        
+    }
+    
 }

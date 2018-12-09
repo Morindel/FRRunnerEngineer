@@ -39,8 +39,11 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createEventButtonClicked:" destination="L0K-Zx-ZoE" eventType="touchUpInside" id="fBD-ya-Mvn"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-ch-QUT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add friend to run" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-ch-QUT">
                                 <rect key="frame" x="16" y="287" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -64,10 +67,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-H6-5az">
+                                <rect key="frame" x="16" y="287" width="343" height="30"/>
+                                <connections>
+                                    <action selector="AddFriendToRunButtonClicked:" destination="L0K-Zx-ZoE" eventType="touchUpInside" id="6AS-ff-rp4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TLN-H6-5az" firstAttribute="centerY" secondItem="AcZ-ch-QUT" secondAttribute="centerY" id="4VS-so-lPx"/>
                             <constraint firstItem="HqN-91-JSB" firstAttribute="leading" secondItem="igq-6M-3ke" secondAttribute="leading" constant="16" id="8nO-ir-XIP"/>
+                            <constraint firstItem="TLN-H6-5az" firstAttribute="centerX" secondItem="AcZ-ch-QUT" secondAttribute="centerX" id="BuV-Px-vnr"/>
                             <constraint firstItem="igq-6M-3ke" firstAttribute="trailing" secondItem="PBe-0P-r1C" secondAttribute="trailing" constant="16" id="CD1-sh-MbR"/>
                             <constraint firstItem="bdY-Sd-Zp6" firstAttribute="leading" secondItem="igq-6M-3ke" secondAttribute="leading" constant="16" id="DLR-3T-shT"/>
                             <constraint firstItem="HqN-91-JSB" firstAttribute="top" secondItem="5RP-u5-WYE" secondAttribute="bottom" constant="8" id="F2Q-N7-uOm"/>
@@ -86,6 +97,8 @@
                             <constraint firstItem="bdY-Sd-Zp6" firstAttribute="top" secondItem="9Ar-hT-2bF" secondAttribute="bottom" constant="8" id="iIS-t0-Hd5"/>
                             <constraint firstItem="igq-6M-3ke" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PBe-0P-r1C" secondAttribute="bottom" constant="180" id="jfw-b8-GjC"/>
                             <constraint firstItem="PBe-0P-r1C" firstAttribute="leading" secondItem="igq-6M-3ke" secondAttribute="leading" constant="16" id="mNc-ZB-B8T"/>
+                            <constraint firstItem="TLN-H6-5az" firstAttribute="height" secondItem="AcZ-ch-QUT" secondAttribute="height" id="ovM-sp-0YE"/>
+                            <constraint firstItem="TLN-H6-5az" firstAttribute="width" secondItem="AcZ-ch-QUT" secondAttribute="width" id="tNC-jr-uPK"/>
                             <constraint firstItem="PKy-mf-a7q" firstAttribute="top" secondItem="HqN-91-JSB" secondAttribute="bottom" constant="40" id="uX7-AM-J2X"/>
                             <constraint firstItem="AcZ-ch-QUT" firstAttribute="top" secondItem="PKy-mf-a7q" secondAttribute="bottom" constant="8" id="vAQ-17-XLp"/>
                             <constraint firstItem="9Ar-hT-2bF" firstAttribute="leading" secondItem="igq-6M-3ke" secondAttribute="leading" constant="16" id="yXa-xB-nYk"/>
@@ -94,11 +107,12 @@
                     </view>
                     <connections>
                         <outlet property="dateTextField" destination="bdY-Sd-Zp6" id="Rbh-GO-xcr"/>
+                        <outlet property="friendsListTextField" destination="AcZ-ch-QUT" id="efT-FS-wSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOk-vk-lIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="-286"/>
+            <point key="canvasLocation" x="276" y="-286.50674662668666"/>
         </scene>
     </scenes>
 </document>

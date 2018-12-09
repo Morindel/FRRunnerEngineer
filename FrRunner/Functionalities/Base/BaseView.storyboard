@@ -299,6 +299,13 @@
                                     <segue destination="G8N-RV-5IS" kind="show" id="6Ae-RJ-fST"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIN-td-qem">
+                                <rect key="frame" x="16" y="384" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Check your challenge">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -307,8 +314,12 @@
                             <constraint firstItem="hOW-4p-Q1M" firstAttribute="leading" secondItem="ScK-kB-5e7" secondAttribute="leading" constant="16" id="8bG-q0-Afa"/>
                             <constraint firstItem="hOW-4p-Q1M" firstAttribute="top" secondItem="fSq-SC-Lpp" secondAttribute="bottom" constant="60" id="AA4-tL-NgC"/>
                             <constraint firstItem="hOW-4p-Q1M" firstAttribute="width" secondItem="fSq-SC-Lpp" secondAttribute="width" id="CzM-kJ-aE8"/>
+                            <constraint firstItem="SIN-td-qem" firstAttribute="width" secondItem="hOW-4p-Q1M" secondAttribute="width" id="IpZ-vM-Zrl"/>
+                            <constraint firstItem="SIN-td-qem" firstAttribute="centerX" secondItem="hOW-4p-Q1M" secondAttribute="centerX" id="PT5-GV-Mwt"/>
+                            <constraint firstItem="SIN-td-qem" firstAttribute="top" secondItem="hOW-4p-Q1M" secondAttribute="bottom" constant="60" id="oeG-ba-b0T"/>
                             <constraint firstItem="fSq-SC-Lpp" firstAttribute="top" secondItem="ScK-kB-5e7" secondAttribute="top" constant="80" id="qeh-QE-k76"/>
                             <constraint firstItem="fSq-SC-Lpp" firstAttribute="leading" secondItem="ScK-kB-5e7" secondAttribute="leading" constant="16" id="rDo-Rz-cla"/>
+                            <constraint firstItem="SIN-td-qem" firstAttribute="height" secondItem="hOW-4p-Q1M" secondAttribute="height" id="v0q-Ny-6vx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ScK-kB-5e7"/>
                     </view>

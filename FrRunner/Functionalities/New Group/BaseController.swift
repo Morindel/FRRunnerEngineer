@@ -11,23 +11,32 @@ import UIKit
 
 class BaseController: UIViewController {
     
-var loadingView: LoadingView?
-
-func showLoadingView() {
-    if loadingView == nil {
-        loadingView = LoadingView.showInView(self.view)
-    }
-}
-
-func hideLoadingView() {
-    if let loadingView = loadingView {
-        loadingView.hide()
-        self.loadingView = nil
-    }
-}
-
-func wasSelectedInMenu() {
+    var loadingView: LoadingView?
     
-}
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.showLoadingView()
+        FriendsNetworkManager.getUsers { (Bool) in
+                self.hideLoadingView()
+        }
+    }
+    
+    func showLoadingView() {
+        if loadingView == nil {
+            loadingView = LoadingView.showInView(self.view)
+        }
+    }
+    
+    func hideLoadingView() {
+        if let loadingView = loadingView {
+            loadingView.hide()
+            self.loadingView = nil
+        }
+    }
+    
+    func wasSelectedInMenu() {
+        
+    }
+    
 }

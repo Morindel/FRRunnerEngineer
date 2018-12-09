@@ -17,6 +17,12 @@ enum FriendsListSectionType : Int{
 class FriendsListViewController : BaseController,UITableViewDelegate,UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     var type : FriendsListSectionType?
+    var isSelection : Bool?
+    var selectedSet : Set<User>?
+    
+    var delegate  : FriendsListViewControllerDelegate?
+    
+    @IBOutlet weak var addButtonConstraintHeight: NSLayoutConstraint!
     
     var friendsList : [User]?
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +35,20 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
         }
         
         viewController.type = type
+        viewController.isSelection = false
+        return viewController
+    }
+    
+    static func newInstanceWithSelectFriends() -> UIViewController{
+        let storyboard = UIStoryboard(name: "FriendsList", bundle: nil)
+        
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "FriendsListViewController") as? FriendsListViewController else {
+            return UIViewController()
+        }
+        
+        viewController.type = FriendsListSectionType.FriendsListSection
+        viewController.isSelection = true
+        
         
         return viewController
     }
@@ -38,13 +58,32 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
         self.registerCells()
         self.loadData()
         
+        if(isSelection ?? false){
+            self.tableView.allowsMultipleSelection = true
+            self.selectedSet = Set.init()
+        } else {
+            self.addButtonConstraintHeight.constant = 0
+        }
+        
         self.tableView.tableFooterView = UIView()
+        
+        FriendsNetworkManager.getFriends { (Bool) in
+            print("Sds")
+        }
     }
     
     func loadData() {
         self.showLoadingView()
         
         switch type?.rawValue {
+        case FriendsListSectionType.FriendsListSection.rawValue:
+            FriendsNetworkManager.getUsers { (Bool) in
+                FriendsNetworkManager.getFriends { (Bool) in
+                    self.friendsList = FriendsNetworkManager.getFriendsForUser()
+                    self.tableView.reloadData()
+                    self.hideLoadingView()
+                }
+            }
         case FriendsListSectionType.FriendsRequestSection.rawValue:
             FriendsNetworkManager.getFriendsRequest { (Bool) in
                 self.friendsList = FriendsNetworkManager.getFriendsRequestForUser()
@@ -84,24 +123,40 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
         let cell : FriendsRequestListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FriendsRequestListTableViewCell", for: indexPath) as! FriendsRequestListTableViewCell
         
         cell.loadWithFriend(user: friend)
+        
+        if self.type?.rawValue == FriendsListSectionType.FriendsListSection.rawValue {
+            cell.hideAddFriendLabel()
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if self.type?.rawValue == FriendsListSectionType.FriendsListSection.rawValue && self.isSelection == false {
+            return
+        }
         
         guard let friendsList = self.friendsList else {
             return
         }
         
         let friend = friendsList[indexPath.row]
-
+        
+        if (self.isSelection ?? false){
+            self.selectedSet?.insert(friend)
+            return
+        }
+        self.showLoadingView()
         Helper.showAlertWithBoolCompletion(viewController: self, title: "Add Friend", message: "Do you want to add \(friend.username) as a Friend?") { (Bool) in
             if (Bool){
                 let parameters = [
-                    "fromUser":friend.id] as [String : AnyObject]
+                    "fromUser":friend.pk] as [String : AnyObject]
                 
                 FriendsNetworkManager.acceptFriendRequest(parameters: parameters) { (Bool) in
-                    
+                    self.tableView.reloadData()
+                    self.hideLoadingView()
                 }
             }
         }
@@ -109,4 +164,29 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
         
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        guard let friendsList = self.friendsList else {
+            return
+        }
+        
+        let friend = friendsList[indexPath.row]
+        
+        if (self.isSelection ?? false){
+            self.selectedSet?.remove(friend)
+            return
+        }
+    }
+    
+    @IBAction func addFriendToChallenge(_ sender: Any) {
+        
+        self.delegate?.returnWithUsers(users: self.selectedSet)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+}
+
+protocol FriendsListViewControllerDelegate : class {
+    func returnWithUsers(users : Set<User>?)
 }

@@ -41,13 +41,6 @@
                                     <segue destination="sP8-iB-jOf" kind="show" id="GiI-h8-3Rv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-hL-23D">
-                                <rect key="frame" x="16" y="340" width="343" height="60"/>
-                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Your Friends">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgU-4B-C92">
                                 <rect key="frame" x="16" y="460" width="343" height="60"/>
                                 <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -55,25 +48,24 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="7Zx-x6-dAW" eventType="touchUpInside" id="eWW-yK-55k"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3T6-hL-23D" firstAttribute="height" secondItem="yjy-il-YP2" secondAttribute="height" id="1Zx-6A-On3"/>
-                            <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="3T6-hL-23D" secondAttribute="trailing" constant="16" id="1wl-Fl-wmX"/>
+                            <constraint firstItem="vgU-4B-C92" firstAttribute="height" secondItem="yjy-il-YP2" secondAttribute="height" id="Cne-Sx-oEc"/>
                             <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="vgU-4B-C92" secondAttribute="trailing" constant="16" id="EKo-17-V5B"/>
                             <constraint firstItem="yjy-il-YP2" firstAttribute="top" secondItem="bz6-LI-sKC" secondAttribute="bottom" constant="60" id="Ne7-ey-NLF"/>
                             <constraint firstItem="bz6-LI-sKC" firstAttribute="top" secondItem="f8q-AJ-0yA" secondAttribute="top" constant="80" id="P9G-8D-16K"/>
                             <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="yjy-il-YP2" secondAttribute="trailing" constant="16" id="Pdg-wV-PE4"/>
+                            <constraint firstItem="vgU-4B-C92" firstAttribute="top" secondItem="yjy-il-YP2" secondAttribute="bottom" constant="180" id="QQX-eQ-yxR"/>
                             <constraint firstItem="bz6-LI-sKC" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="QdU-Ta-edm"/>
-                            <constraint firstItem="3T6-hL-23D" firstAttribute="top" secondItem="yjy-il-YP2" secondAttribute="bottom" constant="60" id="UyG-0c-bgz"/>
-                            <constraint firstItem="3T6-hL-23D" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="gTj-BB-hyE"/>
                             <constraint firstItem="f8q-AJ-0yA" firstAttribute="trailing" secondItem="bz6-LI-sKC" secondAttribute="trailing" constant="16" id="hDP-na-pwX"/>
                             <constraint firstItem="vgU-4B-C92" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="jEZ-ZO-lWE"/>
                             <constraint firstItem="yjy-il-YP2" firstAttribute="leading" secondItem="f8q-AJ-0yA" secondAttribute="leading" constant="16" id="lc8-pq-ghO"/>
-                            <constraint firstItem="vgU-4B-C92" firstAttribute="height" secondItem="3T6-hL-23D" secondAttribute="height" id="qsa-Dp-xBm"/>
                             <constraint firstItem="yjy-il-YP2" firstAttribute="height" secondItem="bz6-LI-sKC" secondAttribute="height" id="weJ-KA-NQu"/>
-                            <constraint firstItem="vgU-4B-C92" firstAttribute="top" secondItem="3T6-hL-23D" secondAttribute="bottom" constant="60" id="xRT-bq-O4Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f8q-AJ-0yA"/>
                     </view>

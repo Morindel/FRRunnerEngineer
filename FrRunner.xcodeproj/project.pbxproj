@@ -50,6 +50,10 @@
 		A87CA5E321B564E400623F2F /* FriendsListSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CA5E121B564E400623F2F /* FriendsListSectionCollectionViewCell.swift */; };
 		A87CA5E421B564E400623F2F /* FriendsListSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87CA5E221B564E400623F2F /* FriendsListSectionCollectionViewCell.xib */; };
 		A883C51021A187C8007ED5C9 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A883C50F21A187C8007ED5C9 /* CreateEvent.storyboard */; };
+		A89C84C521BC425300D14DEF /* AccountNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84C421BC425300D14DEF /* AccountNetworkManager.swift */; };
+		A89C84C721BC79B000D14DEF /* RunsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84C621BC79B000D14DEF /* RunsNetworkManager.swift */; };
+		A89C84C921BD2FDA00D14DEF /* ChallengeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84C821BD2FD900D14DEF /* ChallengeNetworkManager.swift */; };
+		A89C84CC21BD49CA00D14DEF /* ChallengesLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84CB21BD49CA00D14DEF /* ChallengesLocalRepository.swift */; };
 		A8A351A621A059AF00CF019D /* FriendsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */; };
 		A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A6242920FE7E41008B21FD /* BaseView.storyboard */; };
 		A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242B20FE8034008B21FD /* BaseViewController.swift */; };
@@ -124,6 +128,10 @@
 		A87CA5E121B564E400623F2F /* FriendsListSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A87CA5E221B564E400623F2F /* FriendsListSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A883C50F21A187C8007ED5C9 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
+		A89C84C421BC425300D14DEF /* AccountNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworkManager.swift; sourceTree = "<group>"; };
+		A89C84C621BC79B000D14DEF /* RunsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsNetworkManager.swift; sourceTree = "<group>"; };
+		A89C84C821BD2FD900D14DEF /* ChallengeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNetworkManager.swift; sourceTree = "<group>"; };
+		A89C84CB21BD49CA00D14DEF /* ChallengesLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesLocalRepository.swift; sourceTree = "<group>"; };
 		A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNetworkManager.swift; sourceTree = "<group>"; };
 		A8A6242920FE7E41008B21FD /* BaseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseView.storyboard; sourceTree = "<group>"; };
 		A8A6242B20FE8034008B21FD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -391,6 +399,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A89C84CA21BD49A100D14DEF /* LocalRepository */ = {
+			isa = PBXGroup;
+			children = (
+				A89C84CB21BD49CA00D14DEF /* ChallengesLocalRepository.swift */,
+			);
+			path = LocalRepository;
+			sourceTree = "<group>";
+		};
 		A8A6242820FE7E24008B21FD /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +421,9 @@
 			children = (
 				A8CF7E3C218F5BCB00AC433B /* EventsNetworkManager.swift */,
 				A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */,
+				A89C84C421BC425300D14DEF /* AccountNetworkManager.swift */,
+				A89C84C621BC79B000D14DEF /* RunsNetworkManager.swift */,
+				A89C84C821BD2FD900D14DEF /* ChallengeNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -494,6 +513,7 @@
 		A8F8128B20FD23A7001F8D50 /* FrRunner */ = {
 			isa = PBXGroup;
 			children = (
+				A89C84CA21BD49A100D14DEF /* LocalRepository */,
 				A87CA5D121B5556500623F2F /* Friends */,
 				A8EC401F21A31FE200968F97 /* Tools */,
 				A8CF7E3B218F5BB500AC433B /* Network */,
@@ -721,6 +741,7 @@
 				A87C6610218DE3E600AEEF79 /* User.swift in Sources */,
 				A8DF390D21AD5F050011D17D /* Event.swift in Sources */,
 				A87CA5D321B5557E00623F2F /* FriendsPageController.swift in Sources */,
+				A89C84C721BC79B000D14DEF /* RunsNetworkManager.swift in Sources */,
 				A87C6614218DE71700AEEF79 /* Helper.swift in Sources */,
 				A8DF38EA21AA0A8C0011D17D /* NSRegularExpresions.swift in Sources */,
 				A816D77F2121A78C00246F37 /* CoreDataStack.swift in Sources */,
@@ -733,14 +754,17 @@
 				A816D77A2117322000246F37 /* FormatDisplay.swift in Sources */,
 				A8A351A621A059AF00CF019D /* FriendsNetworkManager.swift in Sources */,
 				A816D7782117311900246F37 /* UnitConverter.swift in Sources */,
+				A89C84C921BD2FDA00D14DEF /* ChallengeNetworkManager.swift in Sources */,
 				A87CA5E321B564E400623F2F /* FriendsListSectionCollectionViewCell.swift in Sources */,
 				A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */,
+				A89C84C521BC425300D14DEF /* AccountNetworkManager.swift in Sources */,
 				A8DF390121AD57940011D17D /* EventDetailsDateTableViewCell.swift in Sources */,
 				A87CA5DF21B5647100623F2F /* FriendsListTableViewCell.swift in Sources */,
 				A87B7F0521A5638000B70A76 /* EventsListTableViewCell.swift in Sources */,
 				A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */,
 				A87CA5C721B19B4900623F2F /* FriendsViewController.swift in Sources */,
 				A80A867F214D92AB003057C1 /* FrRunner.xcdatamodeld in Sources */,
+				A89C84CC21BD49CA00D14DEF /* ChallengesLocalRepository.swift in Sources */,
 				A8DF390A21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift in Sources */,
 				A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */,
 				A8EC402621A3208E00968F97 /* BaseController.swift in Sources */,

@@ -19,17 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-Zt-hQc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Mse-40-W2C" id="WUK-eT-uRs"/>
                                     <outlet property="delegate" destination="Mse-40-W2C" id="Vjr-Ul-heK"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byu-HE-miy">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0Mf-nL-2KD"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriendToChallenge:" destination="Mse-40-W2C" eventType="touchUpInside" id="Zre-dK-9wM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PYo-8W-Cvs" firstAttribute="bottom" secondItem="OkH-Zt-hQc" secondAttribute="bottom" id="SgI-0q-8To"/>
+                            <constraint firstItem="byu-HE-miy" firstAttribute="leading" secondItem="PYo-8W-Cvs" secondAttribute="leading" id="4f8-At-b4M"/>
+                            <constraint firstItem="PYo-8W-Cvs" firstAttribute="trailing" secondItem="byu-HE-miy" secondAttribute="trailing" id="Ske-ej-Hu0"/>
+                            <constraint firstItem="PYo-8W-Cvs" firstAttribute="bottom" secondItem="byu-HE-miy" secondAttribute="bottom" id="aI4-7J-5c7"/>
+                            <constraint firstItem="byu-HE-miy" firstAttribute="top" secondItem="OkH-Zt-hQc" secondAttribute="bottom" id="j4N-wL-6we"/>
                             <constraint firstItem="OkH-Zt-hQc" firstAttribute="top" secondItem="PYo-8W-Cvs" secondAttribute="top" id="sEM-5U-Jza"/>
                             <constraint firstItem="OkH-Zt-hQc" firstAttribute="leading" secondItem="PYo-8W-Cvs" secondAttribute="leading" id="tDW-fS-dmu"/>
                             <constraint firstItem="PYo-8W-Cvs" firstAttribute="trailing" secondItem="OkH-Zt-hQc" secondAttribute="trailing" id="xB9-Yf-zvz"/>
@@ -38,12 +54,13 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addButtonConstraintHeight" destination="0Mf-nL-2KD" id="s8x-MU-APU"/>
                         <outlet property="tableView" destination="OkH-Zt-hQc" id="YY4-9q-8eD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rg-z1-4Gg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-213" y="45"/>
+            <point key="canvasLocation" x="-213.59999999999999" y="44.527736131934034"/>
         </scene>
     </scenes>
 </document>

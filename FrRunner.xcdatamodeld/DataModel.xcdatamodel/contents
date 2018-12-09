@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DateChallenge" representedClassName="DateChallenge" syncable="YES" codeGenerationType="class">
+        <attribute name="challengeDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserModel" inverseName="dateChallenges" inverseEntity="UserModel" syncable="YES"/>
+    </entity>
     <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
         <attribute name="createdBy" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -29,17 +34,23 @@
         <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pace" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" inverseName="run" inverseEntity="Location" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserModel" inverseName="runs" inverseEntity="UserModel" syncable="YES"/>
     </entity>
     <entity name="UserModel" representedClassName="UserModel" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isYourFriend" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dateChallenges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DateChallenge" inverseName="users" inverseEntity="DateChallenge" syncable="YES"/>
+        <relationship name="runs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Run" inverseName="user" inverseEntity="Run" syncable="YES"/>
     </entity>
     <elements>
         <element name="Event" positionX="-54" positionY="27" width="128" height="195"/>
         <element name="FriendRequest" positionX="-54" positionY="81" width="128" height="105"/>
         <element name="Location" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="Run" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="UserModel" positionX="-54" positionY="81" width="128" height="75"/>
+        <element name="Run" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="UserModel" positionX="-54" positionY="81" width="128" height="120"/>
+        <element name="DateChallenge" positionX="-36" positionY="99" width="128" height="90"/>
     </elements>
 </model>

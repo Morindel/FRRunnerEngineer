@@ -60,7 +60,7 @@ class FriendsNetworkManager {
     
     static func acceptFriendRequest(parameters:Parameters, completion: @escaping (Bool) -> Void) {
         
-        guard let token = UserDefaults.standard.string(forKey: "token") else {
+        guard let token = UserDefaults.standard.string(forKey: "token"), let username = UserDefaults.standard.string(forKey: "username") else {
             print("Token error");
             return
         }
@@ -72,25 +72,34 @@ class FriendsNetworkManager {
                 "Accept": "application/json"
                 ]).responseJSON{ response in
                     
-//                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FriendRequest")
-//                    let predicate = NSPredicate.init(format: "fromUserCode == \(parameters["fromUser"]) AND toUserCode == \")
-//
-//                    fetchRequest.predicate = predicate
-//
-//                    do{
-//                        let fetchResults = try CoreDataStack.context.fetch(fetchRequest) as? [NSManagedObject]
-//                        if(fetchResults!.count == 0){
-//                            let newFriendRequest = FriendRequest(context: CoreDataStack.context)
-//                            newFriendRequest.id = Int32(friendRequest.pk)
-//                            newFriendRequest.fromUserCode = field.from_user
-//                            newFriendRequest.toUserCode = field.to_user
-//                            newFriendRequest.accepted = false
-//
-//                            CoreDataStack.saveContext()
-//
-//                        }
-//                    completion(true)
-//                    }
+                
+                    
+                    guard let fromUserCode = parameters["fromUser"] else {
+                        completion(false)
+                        return
+                    }
+                    
+                    let toUserCode = FriendsNetworkManager.getUserId(username: username)
+                    
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FriendRequest")
+                    let predicate = NSPredicate.init(format: "fromUserCode == \(fromUserCode) AND toUserCode == \(toUserCode)")
+
+                    print(fromUserCode)
+                    print(toUserCode)
+                    
+                    fetchRequest.predicate = predicate
+
+                    do{
+                        let fetchResults = try CoreDataStack.context.fetch(fetchRequest) as? [NSManagedObject]
+                        let newFriendRequest = fetchResults?.first as! FriendRequest
+                            newFriendRequest.accepted = true
+
+                            CoreDataStack.saveContext()
+                    completion(true)
+                    } catch(let error){
+                        print(error)
+                        completion(false)
+                    }
                     
             }
         }
@@ -112,10 +121,18 @@ class FriendsNetworkManager {
                 ]).responseJSON(completionHandler: { response in
                     
                     
-                    
                     guard let data = response.data else {
                         return
                     }
+                    
+                    do {
+                       let users = try  JSONDecoder().decode([User].self, from: data)
+                        saveDataForFriends(users: users)
+                    } catch (let error) {
+                        print(error)
+                    }
+                    
+                    
                     
                     DispatchQueue.main.async {
                         completion(response.result.isSuccess)
@@ -193,7 +210,6 @@ class FriendsNetworkManager {
                     
                     do {
                         let users =  try JSONDecoder().decode([User].self, from: data)
-                        
                         saveDataForUsers(users: users)
                     } catch (let error){
                         print(error)
@@ -213,7 +229,7 @@ class FriendsNetworkManager {
         for user in users {
             
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserModel")
-            let predicate = NSPredicate.init(format: "id == \(user.id)")
+            let predicate = NSPredicate.init(format: "username == %@",user.username)
             
             fetchRequest.predicate = predicate
             
@@ -221,8 +237,9 @@ class FriendsNetworkManager {
                 let fetchResults = try CoreDataStack.context.fetch(fetchRequest) as? [NSManagedObject]
                 if(fetchResults!.count == 0){
                     let newUser = UserModel(context: CoreDataStack.context)
-                    newUser.id = Int32(user.id)
+                    newUser.id = Int32(user.pk ?? Int(0.0))
                     newUser.username = user.username
+                    newUser.isYourFriend = false
                     
                     CoreDataStack.saveContext()
                     
@@ -232,6 +249,30 @@ class FriendsNetworkManager {
             }
             
         }
+    }
+    
+    static func saveDataForFriends(users:[User]){
+        for user in users {
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserModel")
+            let predicate = NSPredicate.init(format: "username == %@",user.username)
+            
+            fetchRequest.predicate = predicate
+            
+            do{
+                let fetchResults = try CoreDataStack.context.fetch(fetchRequest) as! [NSManagedObject]
+                for friend in fetchResults {
+                    let friendToAdd = friend as! UserModel
+                    friendToAdd.isYourFriend = true
+                    
+                    CoreDataStack.saveContext()
+                }
+                
+            } catch(let error){
+                print(error)
+            }
+        }
+        
     }
     
     static func saveDataForFriendRequest(friendRequests:[Friendship]) {
@@ -265,19 +306,12 @@ class FriendsNetworkManager {
         }
     }
     
-    static func getFriendsRequestForUser() -> [User]? {
+    static func getFriendsForUser() -> [User]? {
         
         var usersArray = [User].init()
         
-        let username = "test3"
-//            UserDefaults.standard.string(forKey: "username") else {
-//            return usersArray
-//        }
-
-        let userId = FriendsNetworkManager.getUserId(username: username)
-
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FriendRequest")
-        let predicate = NSPredicate.init(format: "toUserCode == \(userId)")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserModel")
+        let predicate = NSPredicate.init(format: "isYourFriend == true")
         
         fetchRequest.predicate = predicate
         
@@ -287,7 +321,39 @@ class FriendsNetworkManager {
             for data in fetchResults as! [NSManagedObject]{
                 let friendUserId = data.value(forKey: "id") as! Int32
                 let fromUsername = FriendsNetworkManager.getUserName(userId: friendUserId)
-                let user = User.init(id: Int(friendUserId), username: fromUsername)
+                let user = User.init(id: "1", pk: Int(friendUserId), username: fromUsername)
+                usersArray.append(user)
+            }
+            
+        } catch(let error){
+            print(error)
+        }
+        
+        return usersArray
+    }
+    
+    static func getFriendsRequestForUser() -> [User]? {
+        
+        var usersArray = [User].init()
+        
+       guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return usersArray
+        }
+
+        let userId = FriendsNetworkManager.getUserId(username: username)
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FriendRequest")
+        let predicate = NSPredicate.init(format: "toUserCode == \(userId) AND accepted == false")
+        
+        fetchRequest.predicate = predicate
+        
+        do{
+            let fetchResults = try CoreDataStack.context.fetch(fetchRequest)
+            
+            for data in fetchResults as! [NSManagedObject]{
+                let friendUserId = data.value(forKey: "id") as! Int32
+                let fromUsername = FriendsNetworkManager.getUserName(userId: friendUserId)
+                let user = User.init(id: "1", pk: Int(friendUserId), username: fromUsername)
                 usersArray.append(user)
             }
             

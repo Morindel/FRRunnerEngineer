@@ -74,6 +74,7 @@ class NewRunViewController: UIViewController {
         newRun.distance = distance.value
         newRun.duration = Int64(Int16(seconds))
         newRun.timeStamp = Date ()
+        newRun.username = UserDefaults.standard.string(forKey: "username")
         
         for location in locationList {
             let locationObject = Location(context: CoreDataStack.context)
