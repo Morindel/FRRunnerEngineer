@@ -12,6 +12,14 @@ import UIKit
 class BaseViewController: UITabBarController {
 
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+//        FriendsNetworkManager.getUsers { (Bool) in
+//            print("done")
+//        }
+        print("test")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

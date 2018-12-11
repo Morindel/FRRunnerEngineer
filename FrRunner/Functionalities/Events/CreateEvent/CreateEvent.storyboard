@@ -106,7 +106,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.71764705880000002" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="bNy-Nv-0A0" firstAttribute="centerY" secondItem="t7P-KT-FYn" secondAttribute="centerY" id="44D-hN-khH"/>
                                             <constraint firstItem="HD7-Vr-Tnx" firstAttribute="leading" secondItem="EqY-jb-ucP" secondAttribute="leading" constant="16" id="6XY-ck-QQV"/>

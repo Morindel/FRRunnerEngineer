@@ -125,7 +125,7 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
         self.date = datePicker.date
     }
     
-    func setEventLocation(placeMark: CLPlacemark?) {
+    func returnWithLocation(placeMark: CLPlacemark?) {
         guard let placeMark = placeMark else {
             return
         }

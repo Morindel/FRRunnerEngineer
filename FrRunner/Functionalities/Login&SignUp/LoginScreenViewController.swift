@@ -32,7 +32,9 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
         passwordTextField.delegate = self
         
                  if isLoggedIn() {
-                    didLogin()
+                    FriendsNetworkManager.getUsers { (Bool) in
+                        self.didLogin()
+                    }
                 }
     }
     
@@ -119,6 +121,7 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
             self.view.endEditing(false)
             let mainStoryboard : UIStoryboard = UIStoryboard(name: "BaseView", bundle: nil)
             let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "BaseView")
+        
             self.present(vc, animated: true, completion: nil)
 //            self.dismiss(animated: false, completion: nil)
         
@@ -137,6 +140,9 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
             }
             
             UserDefaults.standard.set(token.token, forKey: "token")
+            FriendsNetworkManager.getUsers(completion: { (Bool) in
+                print("done")
+            })
             
         })
         

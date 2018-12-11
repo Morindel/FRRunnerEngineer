@@ -19,7 +19,7 @@ class ChallengesLocalRepository{
             return[]
         }
         
-        let predicate = NSPredicate.init(format:"ANY users.username == %@", username)
+        let predicate = NSPredicate.init(format:"ANY users.username == %@ AND type == %@ AND isEnded == false", username,"L")
         
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -37,15 +37,16 @@ class ChallengesLocalRepository{
         var summaryDistance = 0.0
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
             dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
         let stringstartDate = dateFormatter.string(from: dateFrom)
-        let stringendDate = dateFormatter.string(from: dateTo)
-        
         let startDate:NSDate = dateFormatter.date(from: stringstartDate)! as NSDate
-        let endDate:NSDate = dateFormatter.date(from: stringendDate)! as NSDate
         
-        let predicate = NSPredicate.init(format:"username == %@ AND (timeStamp >= %@) AND (timeStamp <= %@, username)", username, startDate, endDate)
+        let stringsendDate = dateFormatter.string(from: dateTo)
+        let endDate:NSDate = dateFormatter.date(from: stringsendDate)! as NSDate
+    
+        let predicate = NSPredicate.init(format:"username == %@ AND timeStamp >= %@", username, startDate)
     
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescriptor]

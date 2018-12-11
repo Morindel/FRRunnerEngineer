@@ -54,6 +54,23 @@
 		A89C84C721BC79B000D14DEF /* RunsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84C621BC79B000D14DEF /* RunsNetworkManager.swift */; };
 		A89C84C921BD2FDA00D14DEF /* ChallengeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84C821BD2FD900D14DEF /* ChallengeNetworkManager.swift */; };
 		A89C84CC21BD49CA00D14DEF /* ChallengesLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84CB21BD49CA00D14DEF /* ChallengesLocalRepository.swift */; };
+		A89C84CF21BD540600D14DEF /* ChallengeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84CE21BD540600D14DEF /* ChallengeSummaryViewController.swift */; };
+		A89C84D121BD549700D14DEF /* ChallengeSummary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89C84D021BD549700D14DEF /* ChallengeSummary.storyboard */; };
+		A89C84D521BD67E900D14DEF /* ChallangeSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84D321BD67E900D14DEF /* ChallangeSummaryTableViewCell.swift */; };
+		A89C84D621BD67E900D14DEF /* ChallangeSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89C84D421BD67E900D14DEF /* ChallangeSummaryTableViewCell.xib */; };
+		A89C84D921BD681300D14DEF /* ChallengeListTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84D721BD681300D14DEF /* ChallengeListTitleTableViewCell.swift */; };
+		A89C84DA21BD681300D14DEF /* ChallengeListTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89C84D821BD681300D14DEF /* ChallengeListTitleTableViewCell.xib */; };
+		A89C84DD21BF255E00D14DEF /* ChallengeListDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84DC21BF255E00D14DEF /* ChallengeListDetailsViewController.swift */; };
+		A89C84DF21BFF79300D14DEF /* ChallengeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89C84DE21BFF79300D14DEF /* ChallengeList.storyboard */; };
+		A89C84E221BFFC6A00D14DEF /* ChallengeListBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84E121BFFC6A00D14DEF /* ChallengeListBaseTableViewCell.swift */; };
+		A89C84E521BFFD4300D14DEF /* ChallengeListMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84E321BFFD4300D14DEF /* ChallengeListMapTableViewCell.swift */; };
+		A89C84E621BFFD4300D14DEF /* ChallengeListMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89C84E421BFFD4300D14DEF /* ChallengeListMapTableViewCell.xib */; };
+		A89C84EA21C00FD000D14DEF /* ChallengeListAuthorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84E821C00FD000D14DEF /* ChallengeListAuthorTableViewCell.swift */; };
+		A89C84EB21C00FD100D14DEF /* ChallengeListAuthorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89C84E921C00FD000D14DEF /* ChallengeListAuthorTableViewCell.xib */; };
+		A89C84EE21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84EC21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.swift */; };
+		A89C84EF21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89C84ED21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.xib */; };
+		A89C84F121C05B7200D14DEF /* OneRunChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89C84F021C05B7200D14DEF /* OneRunChallengeViewController.swift */; };
+		A89C84F321C05B9C00D14DEF /* OneRun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89C84F221C05B9C00D14DEF /* OneRun.storyboard */; };
 		A8A351A621A059AF00CF019D /* FriendsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */; };
 		A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A6242920FE7E41008B21FD /* BaseView.storyboard */; };
 		A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6242B20FE8034008B21FD /* BaseViewController.swift */; };
@@ -132,6 +149,23 @@
 		A89C84C621BC79B000D14DEF /* RunsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsNetworkManager.swift; sourceTree = "<group>"; };
 		A89C84C821BD2FD900D14DEF /* ChallengeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNetworkManager.swift; sourceTree = "<group>"; };
 		A89C84CB21BD49CA00D14DEF /* ChallengesLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesLocalRepository.swift; sourceTree = "<group>"; };
+		A89C84CE21BD540600D14DEF /* ChallengeSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSummaryViewController.swift; sourceTree = "<group>"; };
+		A89C84D021BD549700D14DEF /* ChallengeSummary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeSummary.storyboard; sourceTree = "<group>"; };
+		A89C84D321BD67E900D14DEF /* ChallangeSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallangeSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		A89C84D421BD67E900D14DEF /* ChallangeSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallangeSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		A89C84D721BD681300D14DEF /* ChallengeListTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListTitleTableViewCell.swift; sourceTree = "<group>"; };
+		A89C84D821BD681300D14DEF /* ChallengeListTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeListTitleTableViewCell.xib; sourceTree = "<group>"; };
+		A89C84DC21BF255E00D14DEF /* ChallengeListDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListDetailsViewController.swift; sourceTree = "<group>"; };
+		A89C84DE21BFF79300D14DEF /* ChallengeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeList.storyboard; sourceTree = "<group>"; };
+		A89C84E121BFFC6A00D14DEF /* ChallengeListBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListBaseTableViewCell.swift; sourceTree = "<group>"; };
+		A89C84E321BFFD4300D14DEF /* ChallengeListMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListMapTableViewCell.swift; sourceTree = "<group>"; };
+		A89C84E421BFFD4300D14DEF /* ChallengeListMapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeListMapTableViewCell.xib; sourceTree = "<group>"; };
+		A89C84E821C00FD000D14DEF /* ChallengeListAuthorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListAuthorTableViewCell.swift; sourceTree = "<group>"; };
+		A89C84E921C00FD000D14DEF /* ChallengeListAuthorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeListAuthorTableViewCell.xib; sourceTree = "<group>"; };
+		A89C84EC21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		A89C84ED21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeListDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		A89C84F021C05B7200D14DEF /* OneRunChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRunChallengeViewController.swift; sourceTree = "<group>"; };
+		A89C84F221C05B9C00D14DEF /* OneRun.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OneRun.storyboard; sourceTree = "<group>"; };
 		A8A351A521A059AF00CF019D /* FriendsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNetworkManager.swift; sourceTree = "<group>"; };
 		A8A6242920FE7E41008B21FD /* BaseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseView.storyboard; sourceTree = "<group>"; };
 		A8A6242B20FE8034008B21FD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -338,26 +372,29 @@
 		A87CA5C821B4581400623F2F /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
-				A87CA5CA21B4582500623F2F /* Distance */,
-				A87CA5C921B4581B00623F2F /* Time */,
+				A89C84CD21BD53CC00D14DEF /* Summary */,
+				A87CA5CA21B4582500623F2F /* LongChallenge */,
+				A87CA5C921B4581B00623F2F /* OneRunChallene */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
 		};
-		A87CA5C921B4581B00623F2F /* Time */ = {
+		A87CA5C921B4581B00623F2F /* OneRunChallene */ = {
 			isa = PBXGroup;
 			children = (
+				A89C84F021C05B7200D14DEF /* OneRunChallengeViewController.swift */,
+				A89C84F221C05B9C00D14DEF /* OneRun.storyboard */,
 			);
-			path = Time;
+			path = OneRunChallene;
 			sourceTree = "<group>";
 		};
-		A87CA5CA21B4582500623F2F /* Distance */ = {
+		A87CA5CA21B4582500623F2F /* LongChallenge */ = {
 			isa = PBXGroup;
 			children = (
 				A87CA5CB21B4583E00623F2F /* DistanceChallengeViewController.swift */,
 				A87CA5CF21B4585600623F2F /* DistanceChallenge.storyboard */,
 			);
-			path = Distance;
+			path = LongChallenge;
 			sourceTree = "<group>";
 		};
 		A87CA5D121B5556500623F2F /* Friends */ = {
@@ -405,6 +442,60 @@
 				A89C84CB21BD49CA00D14DEF /* ChallengesLocalRepository.swift */,
 			);
 			path = LocalRepository;
+			sourceTree = "<group>";
+		};
+		A89C84CD21BD53CC00D14DEF /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				A89C84DB21BF253000D14DEF /* Details */,
+				A89C84D221BD67AF00D14DEF /* Cells */,
+				A89C84CE21BD540600D14DEF /* ChallengeSummaryViewController.swift */,
+				A89C84D021BD549700D14DEF /* ChallengeSummary.storyboard */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		A89C84D221BD67AF00D14DEF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A89C84DB21BF253000D14DEF /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A89C84E721BFFE4700D14DEF /* Cells */,
+				A89C84DC21BF255E00D14DEF /* ChallengeListDetailsViewController.swift */,
+				A89C84DE21BFF79300D14DEF /* ChallengeList.storyboard */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		A89C84E021BFFC4400D14DEF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A89C84E121BFFC6A00D14DEF /* ChallengeListBaseTableViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A89C84E721BFFE4700D14DEF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A89C84E021BFFC4400D14DEF /* Base */,
+				A89C84E321BFFD4300D14DEF /* ChallengeListMapTableViewCell.swift */,
+				A89C84E421BFFD4300D14DEF /* ChallengeListMapTableViewCell.xib */,
+				A89C84D721BD681300D14DEF /* ChallengeListTitleTableViewCell.swift */,
+				A89C84D821BD681300D14DEF /* ChallengeListTitleTableViewCell.xib */,
+				A89C84E821C00FD000D14DEF /* ChallengeListAuthorTableViewCell.swift */,
+				A89C84E921C00FD000D14DEF /* ChallengeListAuthorTableViewCell.xib */,
+				A89C84EC21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.swift */,
+				A89C84ED21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.xib */,
+				A89C84D321BD67E900D14DEF /* ChallangeSummaryTableViewCell.swift */,
+				A89C84D421BD67E900D14DEF /* ChallangeSummaryTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A8A6242820FE7E24008B21FD /* Base */ = {
@@ -639,6 +730,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89C84EF21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.xib in Resources */,
 				A8DF38FC21AD52FB0011D17D /* EventDetailsTitleTableViewCell.xib in Resources */,
 				A8DF38EF21AC9D7B0011D17D /* EventDetails.storyboard in Resources */,
 				A87B7F0B21A57D2200B70A76 /* EventsListSectionCollectionViewCell.xib in Resources */,
@@ -647,10 +739,15 @@
 				A8DF390B21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib in Resources */,
 				A8024D4221A455C300034F63 /* EventPage.storyboard in Resources */,
 				A8F8129420FD23A8001F8D50 /* Assets.xcassets in Resources */,
+				A89C84F321C05B9C00D14DEF /* OneRun.storyboard in Resources */,
 				A87CA5E021B5647100623F2F /* FriendsRequestListTableViewCell.xib in Resources */,
+				A89C84D621BD67E900D14DEF /* ChallangeSummaryTableViewCell.xib in Resources */,
 				A87CA5D921B5561A00623F2F /* FriendsList.storyboard in Resources */,
 				A81098FE21B59037002CC529 /* SocialMenu.storyboard in Resources */,
+				A89C84E621BFFD4300D14DEF /* ChallengeListMapTableViewCell.xib in Resources */,
 				A87B7F0621A5638000B70A76 /* EventsListTableViewCell.xib in Resources */,
+				A89C84DA21BD681300D14DEF /* ChallengeListTitleTableViewCell.xib in Resources */,
+				A89C84EB21C00FD100D14DEF /* ChallengeListAuthorTableViewCell.xib in Resources */,
 				A87CA5D021B4585600623F2F /* DistanceChallenge.storyboard in Resources */,
 				A8024D3E21A37A6C00034F63 /* EventList.storyboard in Resources */,
 				A883C51021A187C8007ED5C9 /* CreateEvent.storyboard in Resources */,
@@ -658,8 +755,10 @@
 				A8DF38F821ACA0F40011D17D /* EventDetailsLocationTableViewCell.xib in Resources */,
 				A80A4F672125B50800359EB0 /* GoogleService-Info.plist in Resources */,
 				A87CA5D521B5558F00623F2F /* FriendsPage.storyboard in Resources */,
+				A89C84D121BD549700D14DEF /* ChallengeSummary.storyboard in Resources */,
 				A8A6242A20FE7E41008B21FD /* BaseView.storyboard in Resources */,
 				A8DF390621AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.xib in Resources */,
+				A89C84DF21BFF79300D14DEF /* ChallengeList.storyboard in Resources */,
 				A87CA5E421B564E400623F2F /* FriendsListSectionCollectionViewCell.xib in Resources */,
 				A8EC402321A3203300968F97 /* LoadingView.xib in Resources */,
 				A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */,
@@ -723,13 +822,18 @@
 			files = (
 				A8156D8020FFCC24005A922D /* NewRunViewController.swift in Sources */,
 				A80A867C214D9051003057C1 /* CreateEventViewController.swift in Sources */,
+				A89C84E521BFFD4300D14DEF /* ChallengeListMapTableViewCell.swift in Sources */,
 				A87CA5CD21B4583E00623F2F /* DistanceChallengeViewController.swift in Sources */,
+				A89C84DD21BF255E00D14DEF /* ChallengeListDetailsViewController.swift in Sources */,
 				A85A0D482196406A00B826A0 /* AddExistingEventViewController.swift in Sources */,
 				A816D77D211732C200246F37 /* LocationManager.swift in Sources */,
 				A81098FC21B58EE5002CC529 /* FriendMenuViewController.swift in Sources */,
+				A89C84D521BD67E900D14DEF /* ChallangeSummaryTableViewCell.swift in Sources */,
 				A8A6242C20FE8034008B21FD /* BaseViewController.swift in Sources */,
+				A89C84D921BD681300D14DEF /* ChallengeListTitleTableViewCell.swift in Sources */,
 				A8DF38FE21AD53FE0011D17D /* EventDetailsBaseTableViewCell.swift in Sources */,
 				A8024D4021A4555400034F63 /* EventPageController.swift in Sources */,
+				A89C84E221BFFC6A00D14DEF /* ChallengeListBaseTableViewCell.swift in Sources */,
 				A8DF38F721ACA0F40011D17D /* EventDetailsLocationTableViewCell.swift in Sources */,
 				A8DF390521AD5A6E0011D17D /* EventDetailsAuthorAndLocationNameTableViewCell.swift in Sources */,
 				A8DF38ED21AC9D6F0011D17D /* EventDetailsViewController.swift in Sources */,
@@ -758,7 +862,9 @@
 				A87CA5E321B564E400623F2F /* FriendsListSectionCollectionViewCell.swift in Sources */,
 				A80A867E214D91AC003057C1 /* ChooseLocationViewController.swift in Sources */,
 				A89C84C521BC425300D14DEF /* AccountNetworkManager.swift in Sources */,
+				A89C84EA21C00FD000D14DEF /* ChallengeListAuthorTableViewCell.swift in Sources */,
 				A8DF390121AD57940011D17D /* EventDetailsDateTableViewCell.swift in Sources */,
+				A89C84EE21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.swift in Sources */,
 				A87CA5DF21B5647100623F2F /* FriendsListTableViewCell.swift in Sources */,
 				A87B7F0521A5638000B70A76 /* EventsListTableViewCell.swift in Sources */,
 				A86EFB842110D11A006252A0 /* StoryboardSupport.swift in Sources */,
@@ -768,7 +874,9 @@
 				A8DF390A21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift in Sources */,
 				A87C6612218DE49D00AEEF79 /* Constants.swift in Sources */,
 				A8EC402621A3208E00968F97 /* BaseController.swift in Sources */,
+				A89C84F121C05B7200D14DEF /* OneRunChallengeViewController.swift in Sources */,
 				A8EC402121A31FF300968F97 /* LoadingView.swift in Sources */,
+				A89C84CF21BD540600D14DEF /* ChallengeSummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,10 +16,6 @@ class BaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.showLoadingView()
-        FriendsNetworkManager.getUsers { (Bool) in
-                self.hideLoadingView()
-        }
     }
     
     func showLoadingView() {

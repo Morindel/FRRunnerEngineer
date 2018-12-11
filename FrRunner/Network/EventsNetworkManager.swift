@@ -99,7 +99,6 @@ class EventsNetworkManager
                 ]).responseString{ response in
                 switch response.result {
                 case .success:
-                    print(response)
                     completion(true)
                     break
                     

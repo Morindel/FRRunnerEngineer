@@ -82,15 +82,19 @@ class FriendMenuViewController: BaseController {
         }
         UserDefaults.standard.removePersistentDomain(forName: bundle)
         
-        AccountNetworkManager.deleteAllData("UserModel")
+//        AccountNetworkManager.deleteAllData("UserModel")
         AccountNetworkManager.deleteAllData("FriendRequest")
-        AccountNetworkManager.deleteAllData("Event")
+//        AccountNetworkManager.deleteAllData("Event")
 //        AccountNetworkManager.deleteAllData("Run")
 //        AccountNetworkManager.deleteAllData("Location")
         
         let mainStoryboard : UIStoryboard = UIStoryboard(name: "LoginScreen", bundle: nil)
         let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginScreen")
-        self.present(vc, animated: true, completion: nil);
+        
+        let navController = UINavigationController(rootViewController: vc)
+        
+        self.navigationController?.present(navController, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil);
         
     }
     

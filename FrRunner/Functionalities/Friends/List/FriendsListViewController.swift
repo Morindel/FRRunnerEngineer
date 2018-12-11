@@ -55,6 +55,8 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.friendsList = [User].init()
         self.registerCells()
         self.loadData()
         
@@ -77,19 +79,19 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
         
         switch type?.rawValue {
         case FriendsListSectionType.FriendsListSection.rawValue:
-            FriendsNetworkManager.getUsers { (Bool) in
                 FriendsNetworkManager.getFriends { (Bool) in
                     self.friendsList = FriendsNetworkManager.getFriendsForUser()
                     self.tableView.reloadData()
                     self.hideLoadingView()
                 }
-            }
+            
         case FriendsListSectionType.FriendsRequestSection.rawValue:
             FriendsNetworkManager.getFriendsRequest { (Bool) in
                 self.friendsList = FriendsNetworkManager.getFriendsRequestForUser()
                 self.tableView.reloadData()
                 self.hideLoadingView()
             }
+            
             break
         default:
             self.hideLoadingView()
@@ -148,6 +150,8 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
             self.selectedSet?.insert(friend)
             return
         }
+        
+        
         self.showLoadingView()
         Helper.showAlertWithBoolCompletion(viewController: self, title: "Add Friend", message: "Do you want to add \(friend.username) as a Friend?") { (Bool) in
             if (Bool){

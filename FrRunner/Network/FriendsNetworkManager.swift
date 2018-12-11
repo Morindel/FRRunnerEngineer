@@ -84,9 +84,6 @@ class FriendsNetworkManager {
                     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FriendRequest")
                     let predicate = NSPredicate.init(format: "fromUserCode == \(fromUserCode) AND toUserCode == \(toUserCode)")
 
-                    print(fromUserCode)
-                    print(toUserCode)
-                    
                     fetchRequest.predicate = predicate
 
                     do{
@@ -126,6 +123,7 @@ class FriendsNetworkManager {
                     }
                     
                     do {
+                        print(response.value)
                        let users = try  JSONDecoder().decode([User].self, from: data)
                         saveDataForFriends(users: users)
                     } catch (let error) {
@@ -205,6 +203,7 @@ class FriendsNetworkManager {
                 ]).responseJSON(completionHandler: { response in
                     
                     guard let data = response.data else {
+                        completion(response.result.isSuccess)
                         return
                     }
                     
@@ -310,8 +309,12 @@ class FriendsNetworkManager {
         
         var usersArray = [User].init()
         
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return usersArray
+        }
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserModel")
-        let predicate = NSPredicate.init(format: "isYourFriend == true")
+        let predicate = NSPredicate.init(format: "isYourFriend == true AND username != %@", username)
         
         fetchRequest.predicate = predicate
         
@@ -321,7 +324,7 @@ class FriendsNetworkManager {
             for data in fetchResults as! [NSManagedObject]{
                 let friendUserId = data.value(forKey: "id") as! Int32
                 let fromUsername = FriendsNetworkManager.getUserName(userId: friendUserId)
-                let user = User.init(id: "1", pk: Int(friendUserId), username: fromUsername)
+                let user = User.init(id: "\(friendUserId)", pk: Int(friendUserId), username: fromUsername)
                 usersArray.append(user)
             }
             
@@ -351,7 +354,7 @@ class FriendsNetworkManager {
             let fetchResults = try CoreDataStack.context.fetch(fetchRequest)
             
             for data in fetchResults as! [NSManagedObject]{
-                let friendUserId = data.value(forKey: "id") as! Int32
+                let friendUserId = data.value(forKey: "fromUserCode") as! Int32
                 let fromUsername = FriendsNetworkManager.getUserName(userId: friendUserId)
                 let user = User.init(id: "1", pk: Int(friendUserId), username: fromUsername)
                 usersArray.append(user)

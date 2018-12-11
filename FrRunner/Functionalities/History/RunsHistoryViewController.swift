@@ -31,7 +31,15 @@ class RunsHistoryViewController : UITableViewController {
     private func getRuns() -> [Run]{
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timeStamp), ascending: true)
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return[]
+        }
+        
+        let predicate = NSPredicate.init(format:"username == %@", username)
+        
+        fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescriptor]
+        
         do {
             return try CoreDataStack.context.fetch(fetchRequest)
         } catch {

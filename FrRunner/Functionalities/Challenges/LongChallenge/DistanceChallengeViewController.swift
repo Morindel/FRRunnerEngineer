@@ -11,9 +11,12 @@ import CoreData
 
 class DistanceChallengeViewController: BaseController, FriendsListViewControllerDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dateTextField: UITextField!
-    
     @IBOutlet weak var friendsListTextField: UITextField!
+    @IBOutlet weak var tittleTextField: UITextField!
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     private var datePicker : UIDatePicker?
     
@@ -29,6 +32,9 @@ class DistanceChallengeViewController: BaseController, FriendsListViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -102,9 +108,41 @@ class DistanceChallengeViewController: BaseController, FriendsListViewController
     }
     
     @IBAction func createEventButtonClicked(_ sender: Any) {
+        
+        if (dateTextField.text == "" || tittleTextField.text == ""){
+            Helper.showAlert(viewController: self, title: "No data", message: "Fill controller with data")
+            return
+        }
+        
+        guard let title = tittleTextField.text, let date = dateTextField.text else {
+            Helper.showAlert(viewController: self, title: "No title", message: "Type title")
+            return
+        }
+        
+        guard let currentUser = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        
+        let challengeDate = dateFormatter.date(from:date)
+        
         let newChallenge = DateChallenge(context: CoreDataStack.context)
-        newChallenge.distance = 10.0
-        newChallenge.challengeDate = Date.init()
+        newChallenge.challengeDate = challengeDate
+        newChallenge.title = title
+        newChallenge.type = "L"
+        newChallenge.challengeDescription = descriptionTextView.text ?? "No description"
+        newChallenge.createdDate = Date.init()
+        newChallenge.isEnded = false
+        
+        if let username = UserDefaults.standard.string(forKey: "username") {
+            newChallenge.createdBy = username
+            
+        }
         
         for user in userArray {
             
@@ -124,6 +162,21 @@ class DistanceChallengeViewController: BaseController, FriendsListViewController
                 }
         }
         
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserModel")
+        let predicate = NSPredicate.init(format: "username == %@", currentUser)
+        
+        fetchRequest.predicate = predicate
+        
+        do{
+            let fetchResults = try CoreDataStack.context.fetch(fetchRequest) as? [NSManagedObject]
+            let newUser = fetchResults?.first as! UserModel
+            
+            newChallenge.addToUsers(newUser)
+            
+        }catch (let error){
+            print(error)
+        }
+        
         CoreDataStack.saveContext()
         
         Helper.showAlertWithCompletionController(viewController: self, title: "Created", message: "Challenge created")
@@ -131,7 +184,29 @@ class DistanceChallengeViewController: BaseController, FriendsListViewController
         self.navigationController?.popToViewController(self, animated: true)
     }
     
+    //MARK: Keyboard
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
     
 
     

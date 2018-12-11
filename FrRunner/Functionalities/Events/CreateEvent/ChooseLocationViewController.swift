@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
+class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate{
     
     @IBOutlet weak var map: MKMapView!
     
@@ -73,6 +73,58 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
     }
     
     
+    //MARK : SearchBar
+    
+    @IBAction func searchButtonAction(_ sender: Any) {
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        self.present(searchController, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = .gray
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        
+        self.view.addSubview(activityIndicator)
+        
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = searchBar.text
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start{ (response, error ) in
+            
+            activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
+            if response == nil {
+                Helper.showAlert(viewController: self, title: "No result", message: "There is no result")
+            } else {
+                let annotations =  self.map.annotations
+                self.map.removeAnnotations(annotations)
+                
+                guard let latitude = response?.boundingRegion.center.latitude, let longitude = response?.boundingRegion.center.longitude else {
+                    Helper.showAlert(viewController: self, title: "No result", message: "There is no result")
+                    return
+                }
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+                let span = MKCoordinateSpan.init(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let region = MKCoordinateRegion.init(center: coordinate, span: span)
+                self.map.setRegion(region, animated: true)
+                
+            }
+        }
+    }
+    
     @IBAction func locationSelected(_ sender: UILongPressGestureRecognizer) {
         if sender.state != UIGestureRecognizer.State.began { return }
         
@@ -112,7 +164,7 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
         let alertController = UIAlertController(title: "Save location", message: "Do you want to save \(eventLocationName) as your event location?", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
-            self.delegate?.setEventLocation(placeMark: placeMark ?? nil)
+            self.delegate?.returnWithLocation(placeMark: placeMark ?? nil)
             self.navigationController?.popViewController(animated: true)
         })
         
@@ -122,5 +174,5 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
 }
 
 protocol ChooseLocationViewControllerDelegate : class {
-    func setEventLocation(placeMark : CLPlacemark?)
+    func returnWithLocation(placeMark : CLPlacemark?)
 }
