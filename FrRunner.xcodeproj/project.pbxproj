@@ -90,6 +90,8 @@
 		A8DF390A21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF390821AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift */; };
 		A8DF390B21AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8DF390921AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib */; };
 		A8DF390D21AD5F050011D17D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF390C21AD5F050011D17D /* Event.swift */; };
+		A8E629B521DC5807005D3BD1 /* ChallengeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E629B321DC5807005D3BD1 /* ChallengeListTableViewCell.swift */; };
+		A8E629B621DC5807005D3BD1 /* ChallengeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8E629B421DC5807005D3BD1 /* ChallengeListTableViewCell.xib */; };
 		A8EC402121A31FF300968F97 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC402021A31FF300968F97 /* LoadingView.swift */; };
 		A8EC402321A3203300968F97 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EC402221A3203300968F97 /* LoadingView.xib */; };
 		A8EC402621A3208E00968F97 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC402521A3208E00968F97 /* BaseController.swift */; };
@@ -186,6 +188,8 @@
 		A8DF390821AD5C710011D17D /* EventDetailsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		A8DF390921AD5C710011D17D /* EventDetailsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		A8DF390C21AD5F050011D17D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A8E629B321DC5807005D3BD1 /* ChallengeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListTableViewCell.swift; sourceTree = "<group>"; };
+		A8E629B421DC5807005D3BD1 /* ChallengeListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeListTableViewCell.xib; sourceTree = "<group>"; };
 		A8EC402021A31FF300968F97 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A8EC402221A3203300968F97 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		A8EC402521A3208E00968F97 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -494,6 +498,8 @@
 				A89C84ED21C00FEF00D14DEF /* ChallengeListDescriptionTableViewCell.xib */,
 				A89C84D321BD67E900D14DEF /* ChallangeSummaryTableViewCell.swift */,
 				A89C84D421BD67E900D14DEF /* ChallangeSummaryTableViewCell.xib */,
+				A8E629B321DC5807005D3BD1 /* ChallengeListTableViewCell.swift */,
+				A8E629B421DC5807005D3BD1 /* ChallengeListTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -763,6 +769,7 @@
 				A8EC402321A3203300968F97 /* LoadingView.xib in Resources */,
 				A8F8129F20FD2748001F8D50 /* LoginScreen.storyboard in Resources */,
 				A85A0D4621963FC700B826A0 /* AddExistingEvent.storyboard in Resources */,
+				A8E629B621DC5807005D3BD1 /* ChallengeListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +851,7 @@
 				A8DF38FB21AD52FB0011D17D /* EventDetailsTitleTableViewCell.swift in Sources */,
 				A87C6610218DE3E600AEEF79 /* User.swift in Sources */,
 				A8DF390D21AD5F050011D17D /* Event.swift in Sources */,
+				A8E629B521DC5807005D3BD1 /* ChallengeListTableViewCell.swift in Sources */,
 				A87CA5D321B5557E00623F2F /* FriendsPageController.swift in Sources */,
 				A89C84C721BC79B000D14DEF /* RunsNetworkManager.swift in Sources */,
 				A87C6614218DE71700AEEF79 /* Helper.swift in Sources */,

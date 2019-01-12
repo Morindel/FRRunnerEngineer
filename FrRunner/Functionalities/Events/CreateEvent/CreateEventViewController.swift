@@ -130,15 +130,26 @@ class CreateEventViewController: UIViewController,UITextFieldDelegate, ChooseLoc
             return
         }
         
-        placeTextField.text =
-        " \(placeMark.thoroughfare ?? "") \(placeMark.subThoroughfare ?? "")"
-        
         self.placeMark = placeMark
+        
+        var locationString = ""
+        
+        if let locality = placeMark.locality {
+            locationString.append("City: \(locality) ")
+        }
+        if let thoroughfare = placeMark.thoroughfare {
+            locationString.append("street: \(thoroughfare) ")
+        }
+        if let subThoroughfare = placeMark.subThoroughfare {
+            locationString.append(subThoroughfare)
+        }
+        
+          placeTextField.text = locationString
         
         self.longitude = placeMark.location?.coordinate.longitude
         self.latitude = placeMark.location?.coordinate.latitude
     }
-    
+
     @IBAction func selectLocationButtonClicked(_ sender: Any) {
         if let longitude = self.longitude, let latitude = self.latitude{
              let vc = ChooseLocationViewController.newInstanceWithLocation(coordinate: CLLocationCoordinate2D(latitude: latitude , longitude: longitude)) as! ChooseLocationViewController

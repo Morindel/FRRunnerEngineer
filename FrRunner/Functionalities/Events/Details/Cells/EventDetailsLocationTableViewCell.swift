@@ -35,7 +35,7 @@ class EventDetailsLocationTableViewCell: EventDetailsBaseTableViewCell {
         self.mapView.setCenter(eventCoordinate, animated: false)
     
     
-        mapRegion = MKCoordinateRegion.init(center: eventCoordinate , span: MKCoordinateSpan.init(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        mapRegion = MKCoordinateRegion.init(center: eventCoordinate , span: MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         guard let mapRegion = mapRegion else { return }
         self.mapView.setRegion(mapRegion, animated: true)

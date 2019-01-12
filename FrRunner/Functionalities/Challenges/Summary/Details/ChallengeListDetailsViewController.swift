@@ -13,7 +13,7 @@ class ChallengeListDetailsViewController: BaseController, UITableViewDataSource,
     
     
     enum cellType : Int {
-        case map = 0, titleAndDate, description, author, usersProgress, total
+        case map = 0, titleAndDate, description, author, usersProgress,winner, total
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -49,7 +49,8 @@ class ChallengeListDetailsViewController: BaseController, UITableViewDataSource,
         tableView.register(UINib.init(nibName: "ChallengeListTitleTableViewCell", bundle: nil), forCellReuseIdentifier: "ChallengeListTitleTableViewCell")
         tableView.register(UINib.init(nibName: "ChallengeListDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "ChallengeListDescriptionTableViewCell")
         tableView.register(UINib.init(nibName: "ChallengeListAuthorTableViewCell", bundle: nil), forCellReuseIdentifier: "ChallengeListAuthorTableViewCell")
-         tableView.register(UINib.init(nibName: "ChallangeSummaryTableViewCell", bundle: nil), forCellReuseIdentifier: "ChallangeSummaryTableViewCell")
+        tableView.register(UINib.init(nibName: "ChallangeSummaryTableViewCell", bundle: nil), forCellReuseIdentifier: "ChallangeSummaryTableViewCell")
+        tableView.register(UINib.init(nibName: "ChallengeListTableViewCell", bundle: nil), forCellReuseIdentifier: "ChallengeListTableViewCell")
         
     }
     
@@ -96,6 +97,13 @@ class ChallengeListDetailsViewController: BaseController, UITableViewDataSource,
             }
             
             return users.count
+            
+        case cellType.winner.rawValue:
+            if self.challenge?.isEnded ?? false {
+                return 1
+            } else {
+                return 1
+            }
 
         default:
             return 0
@@ -148,22 +156,25 @@ class ChallengeListDetailsViewController: BaseController, UITableViewDataSource,
             cell.loadWithUserAndChallenge(user: user, challenge: challenge)
             return cell
             
+        case cellType.winner.rawValue:
+            
+            
+            let cell : ChallengeListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChallengeListTableViewCell", for: indexPath) as! ChallengeListTableViewCell
+            cell.loadWithChallenge(challenge: challenge)
+            return cell
+    
         default:
             return UITableViewCell.init()
         }
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.section == 0){
+            return 230
+        } else {
+            return UITableView.automaticDimension
+        }
     }
-    */
+
 
 }

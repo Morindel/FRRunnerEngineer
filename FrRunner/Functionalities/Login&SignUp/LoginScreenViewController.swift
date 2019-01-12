@@ -76,29 +76,14 @@ class LoginScreenViewController: UIViewController,UITextFieldDelegate {
     /*Login with username and password*/
     func login(username:String,password:String) {
         let params = ["username":username,"password":password] as [String:Any]
-        print(params)
         Alamofire.request(API_HOST+"/login",method:.post,parameters:params).responseJSON
             { response in switch response.result {
             case .success:
                 switch response.response?.statusCode ?? -1 {
                 case 200:
-                    guard let data = response.data else {
-                        return
-                    }
-                    print(response.value)
-                    
-                    do{
-                        UserDefaults.standard.set(username,forKey:"username")
-                    } catch(let error){
-                        print(error)
-                    }
-                    
-//                    print(UserDefaults.standard.g)
-                    
+                    UserDefaults.standard.set(username,forKey:"username")
                     LoginScreenViewController.getToken(params: params)
-                    
                     self.didLogin()
-                    
                 case 401:
                     Helper.showAlert(viewController: self, title: "Oops", message: "Username or Password Incorrect")
                 default:

@@ -19,7 +19,34 @@ class ChallengesLocalRepository{
             return[]
         }
         
+        let date : Date = Calendar.current.startOfDay(for: Date.init())
+        
+        let nsdate = date as NSDate
+        
         let predicate = NSPredicate.init(format:"ANY users.username == %@ AND type == %@ AND isEnded == false", username,"L")
+        
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do {
+            return try CoreDataStack.context.fetch(fetchRequest)
+        } catch {
+            return []
+        }
+    }
+    
+    static func getShortChallenges() -> [DateChallenge]{
+        let fetchRequest: NSFetchRequest<DateChallenge> = DateChallenge.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: #keyPath(DateChallenge.challengeDate), ascending: true)
+        
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return[]
+        }
+        
+        let date : Date = Calendar.current.startOfDay(for: Date.init())
+        
+        let nsdate = date as NSDate
+        
+        let predicate = NSPredicate.init(format:"ANY users.username == %@ AND type == %@ AND isEnded == false", username,"S")
         
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescriptor]

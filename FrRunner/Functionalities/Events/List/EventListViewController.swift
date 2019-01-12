@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 enum EventListSectionType : Int{
-    case EventListYourSection = 0 , EventListSponsoredSection, EventListOthersSection, EventListSectionCount
+    case EventListYourSection = 0 , EventListSponsoredSection, EventListFriendsSection, EventListNearestSection, EventListOthersSection, EventListSectionCount
 }
 
 class EventListViewController : BaseController,UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate {

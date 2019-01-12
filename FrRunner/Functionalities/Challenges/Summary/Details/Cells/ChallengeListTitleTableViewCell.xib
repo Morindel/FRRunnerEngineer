@@ -31,18 +31,29 @@
                         <color key="textColor" red="0.44560350319999997" green="0.66834998550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akz-FW-TLH">
+                        <rect key="frame" x="8" y="71" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TZf-Jr-9LI" secondAttribute="bottom" constant="8" id="6Ce-f9-Wq7"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="akz-FW-TLH" secondAttribute="bottom" constant="8" id="AwA-Gw-Qdk"/>
                     <constraint firstItem="Ck6-5Q-LTc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CoE-X0-v2p"/>
                     <constraint firstItem="TZf-Jr-9LI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="JaR-7d-yqU"/>
                     <constraint firstItem="TZf-Jr-9LI" firstAttribute="top" secondItem="Ck6-5Q-LTc" secondAttribute="bottom" constant="8" id="MIT-HL-mcQ"/>
+                    <constraint firstItem="akz-FW-TLH" firstAttribute="width" secondItem="Ck6-5Q-LTc" secondAttribute="width" id="aB3-qr-d1Z"/>
                     <constraint firstAttribute="trailing" secondItem="Ck6-5Q-LTc" secondAttribute="trailing" constant="8" id="esc-C5-qKE"/>
+                    <constraint firstItem="akz-FW-TLH" firstAttribute="top" secondItem="TZf-Jr-9LI" secondAttribute="bottom" constant="16" id="fen-6b-bZk"/>
                     <constraint firstItem="Ck6-5Q-LTc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jV2-cc-s8Z"/>
+                    <constraint firstItem="akz-FW-TLH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ocN-bS-bIS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="challengeTypeLabel" destination="akz-FW-TLH" id="GvX-zj-lde"/>
                 <outlet property="dateLabel" destination="TZf-Jr-9LI" id="b6D-Z0-1jW"/>
                 <outlet property="tileLabel" destination="Ck6-5Q-LTc" id="Ngk-zc-RKd"/>
             </connections>

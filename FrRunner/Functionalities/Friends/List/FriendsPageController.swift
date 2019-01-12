@@ -149,7 +149,15 @@ class FriendsPageController : BaseController,UIPageViewControllerDataSource,UIPa
         let index : Int = self.pagesControllers?.firstIndex(of:viewController as! FriendsListViewController) ?? 0
         
         if(index > 0){
+            if let vc = self.pagesControllers?[index - 1] {
+                vc.loadData()
+            }
+            
             return self.pagesControllers?[index - 1]
+        }
+        
+        if let vc = self.pagesControllers?[index] {
+            vc.loadData()
         }
         
         self.collectionView.reloadData()
@@ -162,7 +170,15 @@ class FriendsPageController : BaseController,UIPageViewControllerDataSource,UIPa
         let index : Int = self.pagesControllers?.firstIndex(of: viewController as! FriendsListViewController) ?? 0
         
         if(index + 1 < self.pagesControllers?.count ?? 0){
+            if let vc = self.pagesControllers?[index + 1] {
+                vc.loadData()
+            }
+            
             return self.pagesControllers?[index + 1]
+        }
+        
+        if let vc = self.pagesControllers?[index] {
+            vc.loadData()
         }
         
         self.collectionView.reloadData()

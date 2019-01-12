@@ -59,8 +59,9 @@ class EventPageController : BaseController,UIPageViewControllerDataSource,UIPage
         self.pagesControllers = [ EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListYourSection),
         
         EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListSponsoredSection),
-        
-        EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListOthersSection)
+         EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListSponsoredSection),
+          EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListSponsoredSection),
+                EventListViewController.newInstanceWithEventListType(withType: EventListSectionType.EventListOthersSection)
         
         ] as? [EventListViewController]
         

@@ -30,7 +30,7 @@ class RunsHistoryViewController : UITableViewController {
     
     private func getRuns() -> [Run]{
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timeStamp), ascending: true)
+               let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timeStamp), ascending: false)
         guard let username = UserDefaults.standard.string(forKey: "username") else {
             return[]
         }

@@ -12,6 +12,7 @@ class ChallengeListTitleTableViewCell: ChallengeListBaseTableViewCell {
 
     @IBOutlet weak var tileLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var challengeTypeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +34,12 @@ class ChallengeListTitleTableViewCell: ChallengeListBaseTableViewCell {
         if let date = challenge.challengeDate {
                self.dateLabel.text = "Challenge end date \(dateFormatter.string(from: date))"
         }
+        
+        if challenge.type == "S" {
+            self.challengeTypeLabel.text = "One run challenge"
+        } else if challenge.type == "L" {
+            self.challengeTypeLabel.text = "Long time challenge"
+        } 
     }
     
 }

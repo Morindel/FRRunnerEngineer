@@ -159,8 +159,11 @@ class FriendsListViewController : BaseController,UITableViewDelegate,UITableView
                     "fromUser":friend.pk] as [String : AnyObject]
                 
                 FriendsNetworkManager.acceptFriendRequest(parameters: parameters) { (Bool) in
-                    self.tableView.reloadData()
-                    self.hideLoadingView()
+                    FriendsNetworkManager.getUsers(completion: { (Bool) in
+                        self.loadData()
+                        self.tableView.reloadData()
+//                        self.hideLoadingView()
+                    })
                 }
             }
         }

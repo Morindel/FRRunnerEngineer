@@ -25,15 +25,16 @@ class ChallengeSummaryViewController : UIViewController, UITableViewDelegate, UI
         
         self.registerCells()
         
-        print(ChallengesLocalRepository.getDateChallenges())
         challenges = [DateChallenge].init()
-        challenges = ChallengesLocalRepository.getDateChallenges()
+        challenges = ChallengesLocalRepository.getShortChallenges()
+        challenges?.append(contentsOf: ChallengesLocalRepository.getDateChallenges())
         
         
         guard let username = UserDefaults.standard.string(forKey: "username") else {
             return
         }
         
+        self.tableView.tableFooterView = UIView()
     }
     
     func registerCells() {

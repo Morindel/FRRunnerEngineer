@@ -131,7 +131,7 @@ class OneRunChallengeViewController : BaseController, FriendsListViewControllerD
     @IBAction func createEventButtonClicked(_ sender: Any) {
         
         if (dateTextField.text == "" || tittleTextField.text == ""){
-            Helper.showAlert(viewController: self, title: "No data", message: "Fill controller with data")
+            Helper.showAlert(viewController: self, title: "No data", message: "Please fill all text fields")
             return
         }
         
@@ -158,6 +158,8 @@ class OneRunChallengeViewController : BaseController, FriendsListViewControllerD
         newChallenge.type = "S"
         newChallenge.challengeDescription = descriptionTextView.text ?? "No description"
         newChallenge.createdDate = Date.init()
+        newChallenge.latitude = self.latitude ?? 0.0
+        newChallenge.longitude = self.longitude ?? 0.0
         newChallenge.isEnded = false
         
         if let username = UserDefaults.standard.string(forKey: "username") {
@@ -211,8 +213,19 @@ class OneRunChallengeViewController : BaseController, FriendsListViewControllerD
             return
         }
         
-        locationTextField.text =
-        " \(placeMark.thoroughfare ?? "") \(placeMark.subThoroughfare ?? "")"
+        var locationString = ""
+        
+        if let locality = placeMark.locality {
+            locationString.append("City: \(locality) ")
+        }
+        if let thoroughfare = placeMark.thoroughfare {
+            locationString.append("street: \(thoroughfare) ")
+        }
+        if let subThoroughfare = placeMark.subThoroughfare {
+            locationString.append(subThoroughfare)
+        }
+        
+        locationTextField.text = locationString
 
         self.longitude = placeMark.location?.coordinate.longitude
         self.latitude = placeMark.location?.coordinate.latitude

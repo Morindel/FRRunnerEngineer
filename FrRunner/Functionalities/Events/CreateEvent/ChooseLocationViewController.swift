@@ -117,7 +117,7 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
                 }
                 
                 let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-                let span = MKCoordinateSpan.init(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let span = MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01)
                 let region = MKCoordinateRegion.init(center: coordinate, span: span)
                 self.map.setRegion(region, animated: true)
                 
@@ -142,18 +142,11 @@ class ChooseLocationViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
             
-            // Place details
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
-            
-            // Address dictionary
-            //            print(placeMark.addressDictionary ?? <#default value#>)
-            
-            
+ 
             self.setEventLocation(placeMark: placeMark)
-            
-            //            print(locationName)
-            
+
         })
     }
     

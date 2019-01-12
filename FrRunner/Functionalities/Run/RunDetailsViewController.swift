@@ -36,7 +36,6 @@ class RunDetailsViewController: UIViewController {
         let distance = Measurement(value: run.distance, unit: UnitLength.meters)
         let seconds = Int(run.duration)
         let formattedDistance = FormatDisplay.distance(distance)
-//        let formattedDate = FormatDisplay.date(run.timestamp)
         let formattedTime = FormatDisplay.time(seconds)
         let formattedPace = FormatDisplay.pace(distance: distance,
                                                seconds: seconds,

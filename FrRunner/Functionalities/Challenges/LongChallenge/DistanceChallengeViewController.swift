@@ -110,7 +110,7 @@ class DistanceChallengeViewController: BaseController, FriendsListViewController
     @IBAction func createEventButtonClicked(_ sender: Any) {
         
         if (dateTextField.text == "" || tittleTextField.text == ""){
-            Helper.showAlert(viewController: self, title: "No data", message: "Fill controller with data")
+            Helper.showAlert(viewController: self, title: "Empty data", message: "Please fill all text fields")
             return
         }
         

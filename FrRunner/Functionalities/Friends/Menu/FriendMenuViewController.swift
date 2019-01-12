@@ -19,7 +19,7 @@ class FriendMenuViewController: BaseController {
     
     @IBAction func sendFriendRequestButtonClicked(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Add New Name", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add Friend", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter username"
         }

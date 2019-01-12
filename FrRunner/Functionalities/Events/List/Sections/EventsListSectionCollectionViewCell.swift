@@ -36,7 +36,13 @@ class EventsListSectionCollectionViewCell: UICollectionViewCell {
             self.sectionNameLabel.text = "Your runs"
             break
         case EventListSectionType.EventListOthersSection.rawValue:
-            self.sectionNameLabel.text = "User's run"
+            self.sectionNameLabel.text = "User's runs"
+            break
+        case EventListSectionType.EventListFriendsSection.rawValue:
+            self.sectionNameLabel.text = "Friend's runs"
+            break
+        case EventListSectionType.EventListNearestSection.rawValue:
+            self.sectionNameLabel.text = "Nearest runs"
             break
         default:
             self.sectionNameLabel.text = "runs"

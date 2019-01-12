@@ -34,7 +34,7 @@ class ChallangeSummaryTableViewCell: ChallengeListBaseTableViewCell {
         
         let distance = Measurement(value: progress, unit: UnitLength.meters)
         
-        self.descriptionLabel.text = "Has made \(FormatDisplay.distance(distance)) so far"
+        self.descriptionLabel.text = "Has made \(FormatDisplay.distance(distance))"
     }
 
     
